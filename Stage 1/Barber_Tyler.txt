@@ -1,0 +1,9 @@
+Tyler Barber
+
+Classes: Flight and Booking
+
+Information - Flight: Destination, Starting Location, Flight Time, Flight Number
+
+Information - Booking: Total Seats, Available Seats, Taken Seats, Seat Number
+
+Information - Tickets: Price, Ticket Number, Available Tickets
