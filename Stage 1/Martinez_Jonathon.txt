@@ -1,0 +1,9 @@
+Jonathon Martinez
+
+Classes: airline/schedule/security
+
+Information - airline: companies, plane types, terminal number, flight logs
+
+Information - schedule: departure times, arrival times, delayed flights, flight numbers 
+
+Information - security: names of person(s) flagged/detained/removed from flights,id number, claimed items, dates
