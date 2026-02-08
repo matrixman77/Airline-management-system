@@ -1,7 +1,8 @@
 Caleb Bafukila 
 
-Classes: passengers/staff members  
+Classes: passengers/staff members/ security
 
 Information- passenger: passenger ID, Name, email, phone# 
+
 
 Information- staff member: staff ID, name, role, salary 
