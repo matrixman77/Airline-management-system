@@ -1,0 +1,9 @@
+class: Passenger 
+Entities: passenger ID, First Name, Last Name, Email, Phone#
+
+Functions: The Passenger class represents a traveler in the Airline Management System. It stores personal information, including Emergency Contact details collected during registration. Each passenger will be linked to Booking objects, allowing them to reserve flights and receive tickets within the system. 
+
+class: Staff
+Entities: staff ID: First Name, Last Name, Role, Salary
+
+Functions: The Staff class represents airline employees whose information is store and maintained within the system. Staff members have assigned roles and responsibilities related to airline operations. Their records can be created, viewed, updated, and deleted within the Staff catalog. Staff may be associated with managing flights or schedules, depending on their assigned role.  
