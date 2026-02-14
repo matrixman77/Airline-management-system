@@ -8,3 +8,15 @@ Information - schedule: departure times, arrival times, delayed flights, flight 
 
 
 Information - security: names of person(s) flagged/detained/removed from flights,id number, claimed items, dates
+
+*****************************
+NEW BELOW
+*****************************
+
+Airline Information (Class: Airline)
+Entities: Flight numbers, Plane types, Terminal/Gate number, Airline Name
+Function: The airline class manages the and stores information of the airline such as the different flight numbers and plane types. The class stores the information for the different flight numbers within the airline and different types of plane models. It also stores the different terminal numbers that a certain flight arrives and departs from.
+
+Schedule Information (Class: Schedule)
+Entities: Departure times, Arrival times, Delayed flights, Cancelled flights, Boarding times
+Function: The schedule class manages the schedule in the airline system. This class stores the different arrival and departure times of different airlines and specific flights. It also stores when flights are delayed or canceled. 
