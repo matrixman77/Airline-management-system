@@ -6,4 +6,4 @@ Information - Flight: Destination, Starting Location, Flight Time, Average Fligh
 
 Information - Booking: Total Seats, Available Seats, Taken Seats, Seat Number
 
-Information - Tickets: Price, Ticket Number, Available Tickets, Total Tickets
+Information - Tickets: Price, Ticket Number, Flight Class, Flight date
