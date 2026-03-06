@@ -1,0 +1,8 @@
+Work done
+added Ticket Information Class to the UML Diagram
+added Ticket Management Class to the UML Diagram
+added Flight Information Class to the UML Diagram
+added Flight Management Class to the UML Diagram
+added Booking Information Class to the UML Diagram
+added Booking Management Class to the UML Diagram
+added Person Class to the UML Diagram
