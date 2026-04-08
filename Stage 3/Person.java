@@ -1,4 +1,9 @@
-
+/**
+ * Caleb Bafukila
+ * CSCI 2210
+ * Project Stage: 3
+ * Person class (parent class for Passenger and Staff)
+ */
 public class Person
 {
     protected int id;
