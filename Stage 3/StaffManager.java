@@ -112,9 +112,9 @@ public class StaffManager
      */
     public void loadDummyStaff()
     {
-        addStaff(new Staff(201, "Sarah", "Johnson", "Pilot", 85000));
-        addStaff(new Staff(202, "Michael", "Lee", "Flight Attendant", 45000));
-        addStaff(new Staff(203, "Emma", "Davis", "Manager", 65000));
+        addStaff(new Staff(201, "Caleb", "Johnson", "Pilot", 85000));
+        addStaff(new Staff(202, "Tyler", "Lee", "Flight Attendant", 45000));
+        addStaff(new Staff(203, "Johnathan", "Davis", "Manager", 65000));
     }
 
     /**
