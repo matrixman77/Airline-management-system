@@ -5,7 +5,7 @@
 */
 import java.util.Scanner;
 
-public class MenuLab
+public class AirlineMenu
 {
     static Scanner in = new Scanner(System.in);
     
@@ -20,65 +20,100 @@ public class MenuLab
 	{
 	    while (true)
 	    {
+			System.out.println("Welcome to Eduwardo Airlines Management System");
 	        System.out.println("~~~~~~~~~~~~");
-	        System.out.println("Main Menu:");
-	        System.out.println("1. Regular Methods");
-	        System.out.println("2. Recursive Methods");
-	        System.out.println("3. Quit");
+		    System.out.println("Airline Management Menu");
+	        System.out.println("1. Passenger Menu");
+            System.out.println("2. Staff Menu");
+            System.out.println("3. Booking Menu");
+            System.out.println("4. Ticket Menu");
+            System.out.println("5. Quit");
 	        System.out.println("~~~~~~~~~~~~");
 	        System.out.println("Enter your choice: ");
 	    
-	        int input = in.nextInt();
-	        in.nextLine();
-	    
-	        switch (input)
-	        {   
-	            case 1:
-	                MenuRegular();
-	                break;
-	            case 2:
-	                MenuRecursive();
-	                break;
-	            case 3:
-	                System.out.println("Exiting the Program. Goodbye!");
-	                System.exit(0);
-	            default:
-	                System.out.println("Invalid choice. Please try again.");
-	        }
-	    }
-	}
-	/**
-    * This method creates a menu to present the options for the Regular Methods.
-    */
-	public static void MenuRegular()
-	{
-	    while (true)
-	    {
-	        System.out.println("Regular Methods Menu:");
-	        System.out.println("1. Count number of As");
-	        System.out.println("2. Replace target character");
-	        System.out.println("3. Return Main");
-	        System.out.println("Enter your choice: ");
-	    
-	        int input = in.nextInt();
-	        in.nextLine();
-	    
-	        switch (input)
-	        {   
-	            case 1:
-	                reg_option1();
-	                break;
-	            case 2:
-	                reg_option2();
-	                break;
-	            case 3:
-	                System.out.println("Returning to the main menu. ");
-	                return;
-	            default:
-	                System.out.println("Invalid choice. Please try again. ");
-	        }
-	    }
-	}
+	        int choice = in.nextInt();
+            in.nextLine();
+
+            switch (choice)
+            {
+                case 1:
+                    passengerMenu();
+                    break;
+                case 2:
+                    staffMenu();
+                    break;
+                case 3:
+                    bookingMenu();
+                    break;
+                case 4:
+                    ticketMenu();
+                    break;
+                case 5:
+                    System.out.println("Exiting program. Goodbye!");
+                    return;
+                default:
+                    System.out.println("Invalid choice. Try again.");
+            }
+        }
+    }
+
+    public static void passengerMenu()
+    {
+        while (true)
+        {
+            System.out.println("----- Passenger Menu -----");
+            System.out.println("1. Add Passenger");
+            System.out.println("2. View Passengers");
+            System.out.println("3. Return to Main Menu");
+            System.out.print("Enter your choice: ");
+
+            int choice = in.nextInt();
+            in.nextLine();
+
+            switch (choice)
+            {
+                case 1:
+                    addPassenger();
+                    break;
+                case 2:
+                    viewPassengers();
+                    break;
+                case 3:
+                    return;
+                default:
+                    System.out.println("Invalid choice. Try again.");
+            }
+        }
+    }
+
+    public static void staffMenu()
+    {
+        while (true)
+        {
+            System.out.println("----- Staff Menu -----");
+            System.out.println("1. Add Staff");
+            System.out.println("2. View Staff");
+            System.out.println("3. Return to Main Menu");
+            System.out.print("Enter your choice: ");
+
+            int choice = in.nextInt();
+            in.nextLine();
+
+            switch (choice)
+            {
+                case 1:
+                    addStaff();
+                    break;
+                case 2:
+                    viewStaff();
+                    break;
+                case 3:
+                    return;
+                default:
+                    System.out.println("Invalid choice. Try again.");
+            }
+        }
+    }
 	/**
     * This method creates a menu to present the options for the Recursive Methods.
     */
