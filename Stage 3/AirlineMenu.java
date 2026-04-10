@@ -188,4 +188,60 @@ public class AirlineMenu
             }
         }
     }
+
+	public static void ScheduleMenu() {
+        while (true) {
+            System.out.println("----Schedule Information----");
+            System.out.println("1. Update departure time");
+            System.out.println("2. Update arrival time");
+            System.out.println("3. Update delayed flight");
+            System.out.println("4. Update cancelled flight");
+            System.out.println("5. Update boarding time");
+            System.out.println("6. Get departure time");
+            System.out.println("7. Get arrival time");
+            System.out.println("8. Get delayed flight");
+            System.out.println("9. Get cancelled flight");
+            System.out.println("10. Get boarding time");
+            System.out.println("11. Exit");
+
+            int choice = scanner.nextInt();
+            switch (choice) {
+                case 1:
+                    updateDepartureTime();
+                    break;
+                case 2:
+                    updateArrivalTime();
+                    break;
+                case 3:
+                    updateDelayedFlight();
+                    break;
+                case 4:
+                    updateCancelledFlight();
+                    break;
+                case 5:
+                    updateBoardingTime();
+                    break;
+                case 6:
+                    getDepartureTime();
+                    break;
+                case 7:
+                    getArrivalTime();
+                    break;
+                case 8:
+                    getDelayedFlight();
+                    break;
+                case 9:
+                    getCancelledFlight();
+                    break;
+                case 10:
+                    getBoardingTime();
+                    break;
+                case 11:
+                    System.out.println("Exiting the program. Goodbye!");
+                    return;
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+            }
+        }
+    }
 }
