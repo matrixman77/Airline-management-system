@@ -43,7 +43,7 @@ public class Flight
 * This method returns the starting location
 * @return, the starting location
 */
-	public String getStartLocal
+	public String getStartLocal()
 	{
 		return startLocal;
 	}
