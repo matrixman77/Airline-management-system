@@ -82,7 +82,8 @@ public class AirlineMenu
             System.out.println("----- Staff Menu -----");
             System.out.println("1. Add Staff");
             System.out.println("2. View Staff");
-            System.out.println("3. Return to Main Menu");
+            System.out.println("3. Schedule");
+			System.out.println("4. Return to Main Menu");
             System.out.print("Enter your choice: ");
 
             int choice = in.nextInt();
@@ -96,20 +97,13 @@ public class AirlineMenu
                 case 2:
                     viewStaff();
                     break;
-                case 3:
+				case 3:
+                    scheduleMenu();
+                    break;
+                case 4:
                     return;
                 default:
                     System.out.println("Invalid choice. Try again.");
             }
         }
     }
-
-	public static void reg_option1()
-	{
-	    
-	}
-
-	public static void reg_option2()
-	{
-
-	}
