@@ -49,7 +49,7 @@ public class AirlineMenu
             System.out.println("----- Passenger Menu -----");
             System.out.println("1. Add Passenger");
             System.out.println("2. View Passengers");
-            System.out.println("3. Booking");
+            System.out.println("3. Booking Menu");
 			System.out.println("4. Return to Main Menu");
             System.out.print("Enter your choice: ");
 
@@ -82,8 +82,9 @@ public class AirlineMenu
             System.out.println("----- Staff Menu -----");
             System.out.println("1. Add Staff");
             System.out.println("2. View Staff");
-            System.out.println("3. Schedule");
-			System.out.println("4. Return to Main Menu");
+            System.out.println("3. Schedule Menu");
+			System.out.println("4. Airline Menu");
+			System.out.println("5. Return to Main Menu");
             System.out.print("Enter your choice: ");
 
             int choice = in.nextInt();
