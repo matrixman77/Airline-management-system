@@ -18,6 +18,7 @@ public class AirlineMenu
 		    System.out.println("Airline Management Menu");
 	        System.out.println("1. Passenger Menu");
             System.out.println("2. Staff Menu");
+			System.out.println("3. Admin Menu");
             System.out.println("3. Quit");
 	        System.out.println("~~~~~~~~~~~~");
 	        System.out.println("Enter your choice: ");
@@ -33,7 +34,10 @@ public class AirlineMenu
                 case 2:
                     staffMenu();
                     break;
-                case 3:
+				case 3:
+                     adminMenu();
+                    break;
+                case 4:
                     System.out.println("Exiting program. Goodbye!");
                     return;
                 default:
@@ -41,7 +45,46 @@ public class AirlineMenu
             }
         }
     }
+static PassengerManagment passengerManager = new PassengerManagment();
+static StaffManager staffManager = new StaffManager();
+public static void adminMenu()
+{
+    while (true)
+    {
+        System.out.println("----- Admin Menu -----");
+        System.out.println("1. Load Dummy Passengers");
+        System.out.println("2. Load Dummy Staff");
+        System.out.println("3. Print Passenger Report");
+        System.out.println("4. Print Staff Report");
+        System.out.println("5. Return to Main Menu");
+        System.out.print("Enter your choice: ");
 
+        int choice = in.nextInt();
+        in.nextLine();
+
+        switch (choice)
+        {
+            case 1:
+                passengerManager.loadDummyPassengers();
+                System.out.println("Dummy passengers loaded.");
+                break;
+            case 2:
+                staffManager.loadDummyStaff();
+                System.out.println("Dummy staff loaded.");
+                break;
+            case 3:
+                passengerManager.printPassengerReport();
+                break;
+            case 4:
+                staffManager.printStaffReport();
+                break;
+            case 5:
+                return;
+            default:
+                System.out.println("Invalid choice. Try again.");
+        }
+    }
+}
     public static void passengerMenu()
     {
         while (true)
