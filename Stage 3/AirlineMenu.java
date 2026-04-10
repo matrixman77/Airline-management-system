@@ -101,7 +101,10 @@ public class AirlineMenu
 				case 3:
                     scheduleMenu();
                     break;
-                case 4:
+				case 4:
+                    airlineMenu();
+                    break;
+                case 5:
                     return;
                 default:
                     System.out.println("Invalid choice. Try again.");
@@ -109,8 +112,10 @@ public class AirlineMenu
         }
     }
 	
-    public static void AirlineMenu() {
-        while (true) {
+    public static void airlineMenu() 
+	{
+        while (true) 
+		{
             System.out.println("----Airline Management----");
             System.out.println("1. Add a flight");
             System.out.println("2. Add a terminal number");
@@ -123,7 +128,8 @@ public class AirlineMenu
 
             int choice = scanner.nextInt();
 			in.nextLine();
-            switch (choice) {
+            switch (choice) 
+			{
                 case 1:
                     addFlight();
                     break;
@@ -149,3 +155,37 @@ public class AirlineMenu
             }
         }
     }
+
+	 public static void bookingMenu()
+    {
+        while (true)
+        {
+            System.out.println("----- Booking Menu -----");
+            System.out.println("1. Create Ticket");
+            System.out.println("2. View Tickets");
+            System.out.println("3. Delete Ticket");
+			System.out.println("4. Return");
+            System.out.print("Enter your choice: ");
+
+            int choice = in.nextInt();
+            in.nextLine();
+
+            switch (choice)
+            {
+                case 1:
+                    createStaff();
+                    break;
+                case 2:
+                    viewTickets();
+                    break;
+				case 3:
+                    deleteTickets();
+                    break;
+                case 4:
+                    return;
+                default:
+                    System.out.println("Invalid choice. Try again.");
+            }
+        }
+    }
+}
