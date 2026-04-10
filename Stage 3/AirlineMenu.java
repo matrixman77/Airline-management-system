@@ -117,7 +117,7 @@ public class AirlineMenu
             System.out.println("4. Remove a flight number");
             System.out.println("5. Remove a terminal number");
             System.out.println("6. Remove an airline name");
-			System.out.println("6. Return to the Main Menu");
+			System.out.println("7. Return to the Main Menu");
 
             int choice = scanner.nextInt();
             switch (choice) {
