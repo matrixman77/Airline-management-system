@@ -46,7 +46,7 @@ public class AirlineMenu
         }
     }
 static PassengerManagment passengerManager = new PassengerManagment();
-static StaffManager staffManager = new StaffManager();
+static StaffManagement staffManager = new StaffManager();
 public static void adminMenu()
 {
     while (true)
