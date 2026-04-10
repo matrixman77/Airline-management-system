@@ -6,8 +6,12 @@ public class AirlineMenu
 {
     static Scanner in = new Scanner(System.in);
 
+	static PassengerManagment passengerMagmt = new PassengerManagment();
+	static StaffManagment staffMgmt = new StaffManagment();
 	static FlightManagement flightMgmt = new FlightManagement();
     static TicketManagement ticketMgmt = new TicketManagement();
+	static AirlineManagement airlineMgmt = new AirlineManagement();
+	static ScheduleManagement scheduleMgmt = new ScheduleManagement();
     static BookingManagement bookingMgmt;
     
 	public static void main(String[] args) 
@@ -51,8 +55,7 @@ public class AirlineMenu
             }
         }
     }
-static PassengerManagment passengerManager = new PassengerManagment();
-static StaffManagment staffManager = new StaffManagment();
+	
 public static void adminMenu()
 {
     while (true)
