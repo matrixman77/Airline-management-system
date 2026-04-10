@@ -21,7 +21,7 @@ public class Flight
 		this.startLocal = startLocal;
 		this.totalDistance = totalDistance;
 		this.avgSpeed = avgSpeed;
-		this.flightTime = calcFlightTime;
+		this.flightTime = calcFlightTime();
 	}
 /**
 * This method calculates the flight time
