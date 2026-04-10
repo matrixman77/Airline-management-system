@@ -238,7 +238,7 @@ public class AirlineMenu
                     getBoardingTime();
                     break;
                 case 11:
-                    System.out.println("Exiting the program. Goodbye!");
+                    System.out.println("Exiting the program.");
                     return;
                 default:
                     System.out.println("Invalid choice. Please try again.");
