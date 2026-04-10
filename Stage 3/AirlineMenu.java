@@ -107,3 +107,42 @@ public class AirlineMenu
             }
         }
     }
+	
+    public static void AirlineMenu() {
+        while (true) {
+            System.out.println("----Airline Management----");
+            System.out.println("1. Add a flight");
+            System.out.println("2. Add a terminal number");
+            System.out.println("3. Add an airline name");
+            System.out.println("4. Remove a flight number");
+            System.out.println("5. Remove a terminal number");
+            System.out.println("6. Remove an airline name");
+			System.out.println("6. Return to the Main Menu");
+
+            int choice = scanner.nextInt();
+            switch (choice) {
+                case 1:
+                    addFlight();
+                    break;
+                case 2:
+                    addTerminalNumber();
+                    break;
+                case 3:
+                    addAirlineName();
+                    break;
+                case 4:
+                    removeFlightNumber();
+                    break;
+                case 5:
+                    removeTerminalNumber();
+                    break;
+                case 6:
+                    removeAirlineName();
+                    break;
+                case 7:
+                    return;
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+            }
+        }
+    }
