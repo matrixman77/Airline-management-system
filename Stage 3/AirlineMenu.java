@@ -121,6 +121,7 @@ public class AirlineMenu
 			System.out.print("Enter your choice: ");
 
             int choice = scanner.nextInt();
+			in.nextLine();
             switch (choice) {
                 case 1:
                     addFlight();
