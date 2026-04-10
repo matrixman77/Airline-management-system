@@ -197,12 +197,8 @@ public class AirlineMenu
             System.out.println("3. Update delayed flight");
             System.out.println("4. Update cancelled flight");
             System.out.println("5. Update boarding time");
-            System.out.println("6. Display departure time");
-            System.out.println("7. Display arrival time");
-            System.out.println("8. Display delayed flight");
-            System.out.println("9. Display cancelled flight");
-            System.out.println("10. Display boarding time");
-            System.out.println("11. Exit");
+            System.out.println("6. Display schedlue");
+            System.out.println("7. Exit");
 			System.out.print("Enter your choice: ");
 
             int choice = scanner.nextInt();
@@ -223,21 +219,9 @@ public class AirlineMenu
                     updateBoardingTime();
                     break;
                 case 6:
-                    getDepartureTime();
+                    System.out.println(getDepartureTime() + " " * getArrivalTime() + " " +  getDelayedFlight() + " " + getCancelledFlight() + " " + getBoardingTime());
                     break;
                 case 7:
-                    getArrivalTime();
-                    break;
-                case 8:
-                    getDelayedFlight();
-                    break;
-                case 9:
-                    getCancelledFlight();
-                    break;
-                case 10:
-                    getBoardingTime();
-                    break;
-                case 11:
                     System.out.println("Exiting the program.");
                     return;
                 default:
