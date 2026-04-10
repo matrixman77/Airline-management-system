@@ -173,7 +173,7 @@ public class AirlineMenu
             switch (choice)
             {
                 case 1:
-                    createStaff();
+                    createTicket();
                     break;
                 case 2:
                     viewTickets();
