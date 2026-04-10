@@ -1,8 +1,14 @@
 import java.util.Scanner;
+import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class AirlineMenu
 {
     static Scanner in = new Scanner(System.in);
+
+	static FlightManagement flightMgmt = new FlightManagement();
+    static TicketManagement ticketMgmt = new TicketManagement();
+    static BookingManagement bookingMgmt;
     
 	public static void main(String[] args) 
 	{
@@ -240,7 +246,7 @@ public static void adminMenu()
             System.out.println("3. Update delayed flight");
             System.out.println("4. Update cancelled flight");
             System.out.println("5. Update boarding time");
-            System.out.println("6. Display schedlue");
+            System.out.println("6. Display schedule");
             System.out.println("7. Exit");
 			System.out.print("Enter your choice: ");
 
@@ -262,7 +268,7 @@ public static void adminMenu()
                     updateBoardingTime();
                     break;
                 case 6:
-                    System.out.println(getDepartureTime() + " " * getArrivalTime() + " " +  getDelayedFlight() + " " + getCancelledFlight() + " " + getBoardingTime());
+                    displaySchedule();
                     break;
                 case 7:
                     System.out.println("Exiting the program.");
