@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * Project Stage: 3
  * StaffManager class for managing staff members.
  */
-public class StaffManager
+public class StaffManagement
 {
     private ArrayList<Staff> staffList;
 
