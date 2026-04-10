@@ -197,12 +197,13 @@ public class AirlineMenu
             System.out.println("3. Update delayed flight");
             System.out.println("4. Update cancelled flight");
             System.out.println("5. Update boarding time");
-            System.out.println("6. Get departure time");
-            System.out.println("7. Get arrival time");
-            System.out.println("8. Get delayed flight");
-            System.out.println("9. Get cancelled flight");
-            System.out.println("10. Get boarding time");
+            System.out.println("6. Display departure time");
+            System.out.println("7. Display arrival time");
+            System.out.println("8. Display delayed flight");
+            System.out.println("9. Display cancelled flight");
+            System.out.println("10. Display boarding time");
             System.out.println("11. Exit");
+			System.out.print("Enter your choice: ");
 
             int choice = scanner.nextInt();
             switch (choice) {
