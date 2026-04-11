@@ -465,7 +465,7 @@ public static void adminMenu()
     public static void updateDepartureTime()
     {
 	    System.out.println("Enter the departure time you would like to add:");
-		short departureTime = in.nextLine();
+		short departureTime = in.nextShort();
 		scheduleMgmt.updateDepartureTime(departureTime);
 		System.out.println("Departure time updated.");
     }
@@ -473,7 +473,7 @@ public static void adminMenu()
     public static void updateArrivalTime()
     {
 	    System.out.println("Enter the arrival time you would like to add:");
-		short arrivalTime = in.nextLine();
+		short arrivalTime = in.nextShort();
 		scheduleMgmt.updateArrivalTime(arrivalTime);
 		System.out.println("Arrival time updated.");
     }
