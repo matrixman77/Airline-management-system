@@ -23,6 +23,13 @@ public class TicketManagement
         tickets.add(ticket);
     }
 /** 
+* This method returns the tickets
+*/
+    public ArrayList<Ticket> getTickets()
+    {
+        return tickets;
+    }
+/** 
 * This method removes a ticket from the array
 * @param ticketNumber, the ticket number 
 */
