@@ -134,9 +134,11 @@ public static void adminMenu()
             System.out.println("----- Staff Menu -----");
             System.out.println("1. Add Staff");
             System.out.println("2. View Staff");
-            System.out.println("3. Schedule Menu");
-			System.out.println("4. Airline Menu");
-			System.out.println("5. Return to Main Menu");
+            System.out.println("3. View Passenger Tickets");
+            System.out.println("4. Delete Passenger Ticket");
+            System.out.println("5. Schedule Menu");
+			System.out.println("6. Airline Menu");
+			System.out.println("7. Return to Main Menu");
             System.out.print("Enter your choice: ");
 
             int choice = in.nextInt();
@@ -150,13 +152,19 @@ public static void adminMenu()
                 case 2:
                     viewStaff();
                     break;
-				case 3:
+                case 3:
+                    viewTickets();
+                    break;
+                case 4:
+                    deleteTickets();
+                    break;
+				   case 5:
                     scheduleMenu();
                     break;
-				case 4:
+				   case 6:
                     airlineMenu();
                     break;
-                case 5:
+                case 7:
                     return;
                 default:
                     System.out.println("Invalid choice. Try again.");
@@ -216,8 +224,7 @@ public static void adminMenu()
             System.out.println("----- Booking Menu -----");
             System.out.println("1. Create Ticket");
             System.out.println("2. View Tickets");
-            System.out.println("3. Delete Ticket");
-			System.out.println("4. Return to Previous Menu");
+			System.out.println("3. Return to Previous Menu");
             System.out.print("Enter your choice: ");
 
             int choice = in.nextInt();
@@ -231,10 +238,7 @@ public static void adminMenu()
                 case 2:
                     viewTickets();
                     break;
-				case 3:
-                    deleteTickets();
-                    break;
-                case 4:
+                case 3:
                     return;
                 default:
                     System.out.println("Invalid choice. Try again.");
@@ -379,17 +383,61 @@ public static void adminMenu()
     
     public static void createTicket()
     {
+        System.out.println("Enter Ticket Number: ");
+        int ticketNum = in.nextInt();
+        
+        System.out.println("The price is $100.");
+        float price = 100;
+        in.nextLine();
     
+        System.out.println("Enter flight class: ");
+        String fClass = in.nextLine();
+    
+        System.out.println("Enter Flight Date YYYY-MM-DD (Enter date exactly as formatted): ");        
+        LocalDate date = LocalDate.parse(in.nextLine());
+        
+        System.out.println("Current Destinations (Honolulu HI, Fairbanks AK) ");
+        System.out.println("Enter Flight Destination: ");
+        String dest = in.nextLine();
+    
+        System.out.println("Portales NM is your starting location.");
+        String start = "Portales NM";
+        
+        Flight f = new Flight(dest, start, (short)3000, (short)800);
+    
+        Ticket t = new Ticket(ticketNum, price, fClass, date, f);
+        ticketMgmt.addTicket(t);
+    
+        System.out.println("Ticket Created.");
     }
     
     public static void viewTickets()
     {
-    
+        System.out.println("List of Tickets");
+        for (Ticket t : ticketMgmt.getTickets())
+        {
+            System.out.println("Ticket #" + t.getTicketNumber());
+            System.out.println("Price: " + t.getPrice());
+            System.out.println("Class: " + t.getFlightClass());
+            System.out.println("Date: " + t.getFlightDate());
+        }
     }
     
     public static void deleteTickets()
     {
+        System.out.println("Enter ticket number to delete: ");
+        int num = in.nextInt();
+        in.nextLine();
     
+        boolean removed = ticketMgmt.removeTicket(num);
+        if (removed)
+        {
+            System.out.println("Ticket removed.");
+        }
+        else
+        {
+            System.out.println("Ticket not found.");
+        }
     }
     
     public static void updateDepartureTime()
