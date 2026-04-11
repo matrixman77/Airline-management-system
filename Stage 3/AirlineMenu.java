@@ -285,4 +285,101 @@ public static void adminMenu()
             }
         }
     }
+
+	public static void addPassenger()
+    {
+    
+    }
+    
+    public static void viewPassengers()
+    {
+    
+    }
+    
+    public static void addStaff()
+    {
+    
+    }
+    
+    public static void viewStaff()
+    {
+    
+    }
+    
+    public static void addFlight()
+    {
+    
+    }
+    
+    public static void addTerminalNumber()
+    {
+    
+    }
+    
+    public static void addAirlineName()
+    {
+    
+    }
+    
+    public static void removeFlightNumber()
+    {
+    
+    }
+    
+    public static void removeTerminalNumber()
+    {
+    
+    }
+    
+    public static void removeAirlineName()
+    {
+    
+    }
+    
+    public static void createTicket()
+    {
+    
+    }
+    
+    public static void viewTickets()
+    {
+    
+    }
+    
+    public static void deleteTickets()
+    {
+    
+    }
+    
+    public static void updateDepartureTime()
+    {
+    
+    }
+    
+    public static void updateArrivalTime()
+    {
+    
+    }
+    
+    public static void updateDelayedFlight()
+    {
+    
+    }
+    
+    public static void updateCancelledFlight()
+    {
+    
+    }
+
+    
+    public static void updateBoardingTime()
+    {
+    
+    }
+    
+    public static void displaySchedule()
+    {
+    
+    }
+
 }
