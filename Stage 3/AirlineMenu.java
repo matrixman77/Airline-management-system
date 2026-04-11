@@ -12,7 +12,7 @@ public class AirlineMenu
     static TicketManagement ticketMgmt = new TicketManagement();
 	static AirlineManagement airlineMgmt = new AirlineManagement();
 	static ScheduleManagement scheduleMgmt = new ScheduleManagement();
-    static BookingManagement bookingMgmt = new BookingManagement();
+    static BookingManagement bookingMgmt;
     
 	public static void main(String[] args) 
 	{
