@@ -12,7 +12,7 @@ public class AirlineMenu
     static TicketManagement ticketMgmt = new TicketManagement();
 	static AirlineManagement airlineMgmt = new AirlineManagement();
 	static ScheduleManagement scheduleMgmt = new ScheduleManagement();
-    static BookingManagement bookingMgmt;
+    static BookingManagement bookingMgmt = new BookingManagement();
     
 	public static void main(String[] args) 
 	{
@@ -68,7 +68,7 @@ public static void adminMenu()
         System.out.println("5. Return to Main Menu");
         System.out.print("Enter your choice: ");
 
-        int choice = in.nextInt();
+        int in = in.nextInt();
         in.nextLine();
 
         switch (choice)
@@ -105,7 +105,7 @@ public static void adminMenu()
 			System.out.println("4. Return to Main Menu");
             System.out.print("Enter your choice: ");
 
-            int choice = in.nextInt();
+            int in = in.nextInt();
             in.nextLine();
 
             switch (choice)
@@ -139,7 +139,7 @@ public static void adminMenu()
 			System.out.println("5. Return to Main Menu");
             System.out.print("Enter your choice: ");
 
-            int choice = in.nextInt();
+            int in = in.nextInt();
             in.nextLine();
 
             switch (choice)
@@ -178,7 +178,7 @@ public static void adminMenu()
 			System.out.println("7. Return to the Main Menu");
 			System.out.print("Enter your choice: ");
 
-            int choice = scanner.nextInt();
+            int in = scanner.nextInt();
 			in.nextLine();
             switch (choice) 
 			{
@@ -219,7 +219,7 @@ public static void adminMenu()
 			System.out.println("4. Return");
             System.out.print("Enter your choice: ");
 
-            int choice = in.nextInt();
+            int in = in.nextInt();
             in.nextLine();
 
             switch (choice)
@@ -241,7 +241,7 @@ public static void adminMenu()
         }
     }
 
-	public static void ScheduleMenu() {
+	public static void scheduleMenu() {
         while (true) {
             System.out.println("----Schedule Information----");
             System.out.println("1. Update departure time");
@@ -253,7 +253,7 @@ public static void adminMenu()
             System.out.println("7. Exit");
 			System.out.print("Enter your choice: ");
 
-            int choice = scanner.nextInt();
+            int in = scanner.nextInt();
             switch (choice) {
                 case 1:
                     updateDepartureTime();
