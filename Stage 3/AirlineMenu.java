@@ -6,8 +6,8 @@ public class AirlineMenu
 {
     static Scanner in = new Scanner(System.in);
 
-	static PassengerManagment passengerMgmt = new PassengerManagment();
-	static StaffManagment staffMgmt = new StaffManagment();
+	static PassengerManagment passengerManager = new PassengerManagment();
+	static StaffManagment staffManager = new StaffManagment();
 	static FlightManagement flightMgmt = new FlightManagement();
     static TicketManagement ticketMgmt = new TicketManagement();
 	static AirlineManagement airlineMgmt = new AirlineManagement();
