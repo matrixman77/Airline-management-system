@@ -506,10 +506,35 @@ public static void adminMenu()
 		System.out.println("Boarding time updated.");
     }
     
-    public static void displaySchedule()
-    {
-    
-    }
+    public static void viewDepartureTimes() {
+		for (short time : departureTimes) {
+			System.out.println(time +" ")
+		}
+	}
+	
+	public static void viewArrivalTimes() {
+		for (short time : ArrivalTimes) {
+			System.out.println(time +" ")
+		}
+	}
+	
+	public static void viewDelayedFlights() {
+		for (short flight : delayedFlights) {
+			System.out.println(flight +" ")
+		}
+	}
+	
+	public static void viewCancelledFlights() {
+		for (short flight : cancelledFlights) {
+			System.out.println(flight +" ")
+		}
+	}
+	
+	public static void viewBoardingTimes() {
+		for (short time : boardingTimes) {
+			System.out.println(time +" ")
+		}
+	}
 	
 	public static boolean checkPassword()
    {
