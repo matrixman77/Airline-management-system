@@ -158,10 +158,10 @@ public static void adminMenu()
                 case 4:
                     deleteTickets();
                     break;
-				   case 5:
+				case 5:
                     scheduleMenu();
                     break;
-				   case 6:
+				case 6:
                     airlineMenu();
                     break;
                 case 7:
@@ -352,8 +352,11 @@ public static void adminMenu()
     }
     
     public static void addFlight()
-    {
-    
+    {  
+        System.out.println("Enter FLight Number: ");
+        String flightNum = in.nextLine();
+        airlineMgmt.addFlightNumber(flightNum);
+        System.out.println("Flight number added.");
     }
     
     public static void addTerminalNumber()
@@ -376,7 +379,6 @@ public static void adminMenu()
 	    System.out.println("Enter the Flight Number you would like to remove:");
 		String terminalNumber = in.nextLine();
 		gateNumber.removeTerminalNumber(terminalNumber);
-
     }
     
     public static void removeTerminalNumber()
@@ -514,6 +516,4 @@ public static void adminMenu()
         System.out.println("Incorrect password. Try again.");
       }
     }
-
-
 }
