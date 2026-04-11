@@ -175,7 +175,7 @@ public static void adminMenu()
             System.out.println("4. Remove a flight number");
             System.out.println("5. Remove a terminal number");
             System.out.println("6. Remove an airline name");
-			System.out.println("7. Return to the Main Menu");
+			System.out.println("7. Return to Previous Menu");
 			System.out.print("Enter your choice: ");
 
             int choice = in.nextInt();
@@ -217,7 +217,7 @@ public static void adminMenu()
             System.out.println("1. Create Ticket");
             System.out.println("2. View Tickets");
             System.out.println("3. Delete Ticket");
-			System.out.println("4. Return");
+			System.out.println("4. Return to Previous Menu");
             System.out.print("Enter your choice: ");
 
             int choice = in.nextInt();
@@ -251,7 +251,7 @@ public static void adminMenu()
             System.out.println("4. Update cancelled flight");
             System.out.println("5. Update boarding time");
             System.out.println("6. Display schedule");
-            System.out.println("7. Exit");
+            System.out.println("7. Return to Previous Menu");
 			System.out.print("Enter your choice: ");
 
             int choice = in.nextInt();
