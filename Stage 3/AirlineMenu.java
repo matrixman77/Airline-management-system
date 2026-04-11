@@ -68,7 +68,7 @@ public static void adminMenu()
         System.out.println("5. Return to Main Menu");
         System.out.print("Enter your choice: ");
 
-        int in = in.nextInt();
+        int choice = in.nextInt();
         in.nextLine();
 
         switch (choice)
@@ -105,7 +105,7 @@ public static void adminMenu()
 			System.out.println("4. Return to Main Menu");
             System.out.print("Enter your choice: ");
 
-            int in = in.nextInt();
+            int choice = in.nextInt();
             in.nextLine();
 
             switch (choice)
@@ -139,7 +139,7 @@ public static void adminMenu()
 			System.out.println("5. Return to Main Menu");
             System.out.print("Enter your choice: ");
 
-            int in = in.nextInt();
+            int choice = in.nextInt();
             in.nextLine();
 
             switch (choice)
@@ -178,8 +178,9 @@ public static void adminMenu()
 			System.out.println("7. Return to the Main Menu");
 			System.out.print("Enter your choice: ");
 
-            int in = scanner.nextInt();
-			in.nextLine();
+            int choice = in.nextInt();
+            in.nextLine();
+			
             switch (choice) 
 			{
                 case 1:
@@ -219,7 +220,7 @@ public static void adminMenu()
 			System.out.println("4. Return");
             System.out.print("Enter your choice: ");
 
-            int in = in.nextInt();
+            int choice = in.nextInt();
             in.nextLine();
 
             switch (choice)
@@ -253,8 +254,9 @@ public static void adminMenu()
             System.out.println("7. Exit");
 			System.out.print("Enter your choice: ");
 
-            int in = scanner.nextInt();
-            switch (choice) {
+            int choice = in.nextInt();
+            in.nextLine(); 
+			{
                 case 1:
                     updateDepartureTime();
                     break;
