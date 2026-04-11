@@ -13,7 +13,7 @@ public class PassengerManagment
     /**
      * Default constructor
      */
-    public PassengerManager()
+    public PassengerManagment()
     {
         passengerList = new ArrayList<Passenger>();
     }
