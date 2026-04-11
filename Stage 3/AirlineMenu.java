@@ -286,14 +286,34 @@ public static void adminMenu()
         }
     }
 
-	//public static void addPassenger()
-    {
-    
+  public static void addPassenger()
+  {
+    System.out.print("Enter passenger ID: ");
+    int id = in.nextInt();
+    in.nextLine();
+
+    System.out.print("Enter first name: ");
+    String firstName = in.nextLine();
+
+    System.out.print("Enter last name: ");
+    String lastName = in.nextLine();
+
+    System.out.print("Enter email: ");
+    String email = in.nextLine();
+
+    System.out.print("Enter phone number: ");
+    String phoneNumber = in.nextLine();
+
+    Passenger passenger = new Passenger(id, firstName, lastName, email, phoneNumber);
+    passengerManager.addPassenger(passenger);
+
+    System.out.println("Passenger added successfully.");
     }
     
-   // public static void viewPassengers()
+    public static void viewPassengers()
     {
-    
+		passengerManager.displayAllPassengers();
+
     }
     
     public static void addStaff()
