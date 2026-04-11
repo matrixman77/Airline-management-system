@@ -24,13 +24,13 @@ public class AirlineMenu
 	    while (true)
 	    {
 			System.out.println("Welcome to Eduwardo Airlines Management System");
-	        System.out.println("~~~~~~~~~~~~");
-		    System.out.println("Airline Management Menu");
-	        System.out.println("1. Passenger Menu");
-            System.out.println("2. Staff Menu");
-			System.out.println("3. Admin Menu");
-            System.out.println("4. Quit");
-	        System.out.println("~~~~~~~~~~~~");
+	        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+		    System.out.println("         Airline Management Menu");
+	        System.out.println("          1. Passenger Menu");
+            System.out.println("          2. Staff Menu");
+			System.out.println("          3. Admin Menu");
+            System.out.println("          4. Quit");
+	        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 	        System.out.println("Enter your choice: ");
 	    
 	        int choice = in.nextInt();
