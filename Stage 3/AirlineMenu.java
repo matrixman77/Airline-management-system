@@ -286,12 +286,12 @@ public static void adminMenu()
         }
     }
 
-	public static void addPassenger()
+	//public static void addPassenger()
     {
     
     }
     
-    public static void viewPassengers()
+   // public static void viewPassengers()
     {
     
     }
