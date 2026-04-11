@@ -6,14 +6,14 @@ import java.util.ArrayList;
  * Project Stage: 3
  * StaffManager class for managing staff members.
  */
-public class StaffManagement
+public class StaffManagment
 {
     private ArrayList<Staff> staffList;
 
     /**
      * Default constructor
      */
-    public StaffManager()
+    public StaffManagment()
     {
         staffList = new ArrayList<Staff>();
     }
