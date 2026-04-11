@@ -73,5 +73,33 @@ public class AirlineManagement {
     public void addFlightNumber(String flightNumber) {
         this.flightNumbers.add(flightNumber);
     }
+
+    public String getFlightNumber() {
+        return flightNumber;
+    }
+
+    /**
+     * Gets the plane type of the airline.
+     * @return The plane type.
+     */
+    public String getPlaneType() {
+        return planeType;
+    }
+
+    /**
+     * Gets the terminal number of the airline.
+     * @return The terminal number.
+     */
+    public String getTerminalNumber() {
+        return terminalNumber;
+    }
+
+    /**
+     * Gets the airline name.
+     * @return The airline name.
+     */
+    public String getAirlineName() {
+        return airlineName;
+    }
 }
 
