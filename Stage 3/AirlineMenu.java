@@ -256,6 +256,8 @@ public static void adminMenu()
 
             int choice = in.nextInt();
             in.nextLine(); 
+
+			switch (choice)
 			{
                 case 1:
                     updateDepartureTime();
