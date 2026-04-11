@@ -2,10 +2,12 @@
  * @author Jonathon Martinez
  * This class is used to manage the airline information.
  */
+import java.util.ArrayLists;
+
 public class AirlineManagement {
-    private ArrayList<flightNumber> flightNumbers;
-    private ArrayList<gateNumber> gateNumber;
-    private ArrayList<airName> airName;
+    private ArrayList<String> flightNumbers;
+    private ArrayList<String> gateNumber;
+    private ArrayList<String> airName;
 
     /**
      * Constructor for AirlineManagement class.
