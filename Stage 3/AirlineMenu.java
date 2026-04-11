@@ -42,10 +42,14 @@ public class AirlineMenu
                     passengerMenu();
                     break;
                 case 2:
+					if (checkPassword()){
                     staffMenu();
+					}
                     break;
 				case 3:
+					if (checkPassword()){
                      adminMenu();
+					}
                     break;
                 case 4:
                     System.out.println("Exiting program. Goodbye!");
