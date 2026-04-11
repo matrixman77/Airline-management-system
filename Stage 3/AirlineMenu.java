@@ -339,7 +339,7 @@ public static void adminMenu()
     System.out.print("Enter role: ");
     String role = in.nextLine();
 
-    System.out.print("Enter salary: ");
+    System.out.print("Enter salary: $");
     double salary = in.nextDouble();
     in.nextLine();
 
