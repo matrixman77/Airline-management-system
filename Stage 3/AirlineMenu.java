@@ -469,7 +469,7 @@ public static void adminMenu()
     {
     
     }
-	/* public static boolean checkPassword()
+	 public static boolean checkPassword()
 	  {
         while (true)
       {
@@ -490,7 +490,7 @@ public static void adminMenu()
         System.out.println();
         System.out.println("Incorrect password. Try again.");
       }
-    }*/
+    }
 
 
 }
