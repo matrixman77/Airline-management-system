@@ -358,27 +358,39 @@ public static void adminMenu()
     
     public static void addTerminalNumber()
     {
-    
+	    System.out.println("Enter the Terminal Number:");
+		String terminalNumber = in.nextLine();
+		gateNumber.addTerminalNumber(terminalNumber);
     }
     
     public static void addAirlineName()
     {
-    
+	    System.out.println("Enter the Airline Name:");
+		String airlineName = in.nextLine();
+		airName.addAirlineName(airlineName);
+
     }
     
     public static void removeFlightNumber()
     {
-    
+	    System.out.println("Enter the Flight Number you would like to remove:");
+		String terminalNumber = in.nextLine();
+		gateNumber.removeTerminalNumber(terminalNumber);
+
     }
     
     public static void removeTerminalNumber()
     {
-    
+	    System.out.println("Enter the Terminal Number you would like to remove:");
+		String terminalNumber = in.nextLine();
+		gateNumber.removeTerminalNumber(terminalNumber);
     }
     
     public static void removeAirlineName()
     {
-    
+	    System.out.println("Enter the Airline Name you would like to remove:");
+		String airlineName = in.nextLine();
+		airName.removeAirlineName(airlineName);
     }
     
     public static void createTicket()
@@ -442,27 +454,38 @@ public static void adminMenu()
     
     public static void updateDepartureTime()
     {
-    
+	    System.out.println("Enter the departure time you would like to add:");
+		short departureTime = in.nextLine();
+		departureTimes.updateDepartureTime(departureTime);
     }
     
     public static void updateArrivalTime()
     {
-    
+	    System.out.println("Enter the arrival time you would like to add:");
+		short arrivalTime = in.nextLine();
+		arrivalTimes.updateArrivalTime(arrivalTime);
     }
     
     public static void updateDelayedFlight()
     {
-    
+	    System.out.println("Enter the delayed flight:");
+		short delayedFlight = in.nextShort();
+		delayedFlights.updateDelayedFlight(delayedFlight);
     }
     
     public static void updateCancelledFlight()
     {
-    
+	    System.out.println("Enter the cancelled flight:");
+		short cancelledFlight = in.nextShort();
+		cancelledFlights.updateCancelledFlight(cancelledFlight);
+
     }
 
     public static void updateBoardingTime()
     {
-    
+	    System.out.println("Enter the boarding time:");
+		short boardingTime = in.nextShort();
+		boardingTimes.updateBoardingTime(boardingTime);
     }
     
     public static void displaySchedule()
