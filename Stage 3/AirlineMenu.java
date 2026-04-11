@@ -494,9 +494,10 @@ public static void adminMenu()
     {
     
     }
-	 public static boolean checkPassword()
-	  {
-        while (true)
+	
+	public static boolean checkPassword()
+   {
+	   while (true)
       {
         System.out.print("Enter password (or type 'back' to cancel): ");
         String password = in.nextLine().trim();
@@ -515,5 +516,5 @@ public static void adminMenu()
         System.out.println();
         System.out.println("Incorrect password. Try again.");
       }
-    }
+   }
 }
