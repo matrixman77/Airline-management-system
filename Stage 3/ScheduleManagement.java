@@ -63,4 +63,39 @@ public class ScheduleManagement {
         this.boardingTimes.add(boardingTime);
     }
 
+    public short getDepartureTime() {
+        return departureTime;
+    }
+
+    /**
+     * Gets the arrival time of the flight.
+     * @return The arrival time.
+     */
+    public short getArrivalTime() {
+        return arrivalTime;
+    }
+
+    /**
+     * Gets the delayed flight status.
+     * @return The delayed flight status.
+     */
+    public short getDelayedFlight() {
+        return delayedFlight;
+    }
+
+    /**
+     * Gets the cancelled flight status.
+     * @return The cancelled flight status.
+     */
+    public short getCancelledFlight() {
+        return cancelledFlight;
+    }
+
+    /**
+     * Gets the boarding time of the flight.
+     * @return The boarding time.
+     */
+    public short getBoardingTime() {
+        return boardingTime;
+    }
 }
