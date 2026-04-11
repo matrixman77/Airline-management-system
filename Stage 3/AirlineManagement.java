@@ -2,7 +2,7 @@
  * @author Jonathon Martinez
  * This class is used to manage the airline information.
  */
-import java.util.ArrayLists;
+import java.util.ArrayList;
 
 public class AirlineManagement {
     private ArrayList<String> flightNumbers;
