@@ -318,12 +318,33 @@ public static void adminMenu()
     
     public static void addStaff()
     {
-    
+    System.out.print("Enter staff ID: ");
+    int id = in.nextInt();
+    in.nextLine();
+
+    System.out.print("Enter first name: ");
+    String firstName = in.nextLine();
+
+    System.out.print("Enter last name: ");
+    String lastName = in.nextLine();
+
+    System.out.print("Enter role: ");
+    String role = in.nextLine();
+
+    System.out.print("Enter salary: ");
+    double salary = in.nextDouble();
+    in.nextLine();
+
+    Staff staff = new Staff(id, firstName, lastName, role, salary);
+
+    staffManager.addStaff(staff);
+
+    System.out.println("Staff member added successfully.");
     }
     
     public static void viewStaff()
     {
-    
+        staffManager.displayAllStaff();
     }
     
     public static void addFlight()
