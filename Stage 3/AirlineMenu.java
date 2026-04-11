@@ -196,7 +196,7 @@ public static void adminMenu()
             switch (choice) 
 			{
                 case 1:
-                    addFlight();
+                    addFlightNumber();
                     break;
                 case 2:
                     addTerminalNumber();
@@ -355,7 +355,7 @@ public static void adminMenu()
         staffManager.displayAllStaff();
     }
     
-    public static void addFlight()
+    public static void addFlightNumber()
     {  
         System.out.println("Enter FLight Number: ");
         String flightNum = in.nextLine();
@@ -367,36 +367,40 @@ public static void adminMenu()
     {
 	    System.out.println("Enter the Terminal Number:");
 		String terminalNumber = in.nextLine();
-		gateNumber.addTerminalNumber(terminalNumber);
+		airlineMgmt.addTerminalNumber(terminalNumber);
+		System.out.println("Terminal number added.");
     }
     
     public static void addAirlineName()
     {
 	    System.out.println("Enter the Airline Name:");
 		String airlineName = in.nextLine();
-		airName.addAirlineName(airlineName);
-
+		airlineMgmt.addAirlineName(airlineName);
+		System.out.println("Airline name added.");
     }
     
     public static void removeFlightNumber()
     {
 	    System.out.println("Enter the Flight Number you would like to remove:");
 		String terminalNumber = in.nextLine();
-		gateNumber.removeTerminalNumber(terminalNumber);
+		airlineMgmt.removeTerminalNumber(terminalNumber);
+		System.out.println("Flight number removed.");
     }
     
     public static void removeTerminalNumber()
     {
 	    System.out.println("Enter the Terminal Number you would like to remove:");
 		String terminalNumber = in.nextLine();
-		gateNumber.removeTerminalNumber(terminalNumber);
+		airlineMgmt.removeTerminalNumber(terminalNumber);
+		System.out.println("Terminal Number Removed.");
     }
     
     public static void removeAirlineName()
     {
 	    System.out.println("Enter the Airline Name you would like to remove:");
 		String airlineName = in.nextLine();
-		airName.removeAirlineName(airlineName);
+		airlineMgmt.removeAirlineName(airlineName);
+		System.out.println("Airline name removed.");
     }
     
     public static void createTicket()
@@ -462,36 +466,40 @@ public static void adminMenu()
     {
 	    System.out.println("Enter the departure time you would like to add:");
 		short departureTime = in.nextLine();
-		departureTimes.updateDepartureTime(departureTime);
+		scheduleMgmt.updateDepartureTime(departureTime);
+		System.out.println("Departure time updated.");
     }
     
     public static void updateArrivalTime()
     {
 	    System.out.println("Enter the arrival time you would like to add:");
 		short arrivalTime = in.nextLine();
-		arrivalTimes.updateArrivalTime(arrivalTime);
+		scheduleMgmt.updateArrivalTime(arrivalTime);
+		System.out.println("Arrival time updated.");
     }
     
     public static void updateDelayedFlight()
     {
 	    System.out.println("Enter the delayed flight:");
 		short delayedFlight = in.nextShort();
-		delayedFlights.updateDelayedFlight(delayedFlight);
+		scheduleMgmt.updateDelayedFlight(delayedFlight);
+		System.out.println("Delayed flights updated.");
     }
     
     public static void updateCancelledFlight()
     {
 	    System.out.println("Enter the cancelled flight:");
 		short cancelledFlight = in.nextShort();
-		cancelledFlights.updateCancelledFlight(cancelledFlight);
-
+		scheduleMgmt.updateCancelledFlight(cancelledFlight);
+		System.out.println("Cancelled flights updated.");
     }
 
     public static void updateBoardingTime()
     {
 	    System.out.println("Enter the boarding time:");
 		short boardingTime = in.nextShort();
-		boardingTimes.updateBoardingTime(boardingTime);
+		scheduleMgmt.updateBoardingTime(boardingTime);
+		System.out.println("Boarding time updated.");
     }
     
     public static void displaySchedule()
