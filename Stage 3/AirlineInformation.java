@@ -13,7 +13,7 @@ public class AirlineInformation {
      * Constructor for AirlineInformation class.
      * @param flightNumber The flight number of the airline.
      */
-    public getFlightNumber() {
+    public String getFlightNumber() {
         return flightNumber;
     }
 
@@ -21,7 +21,7 @@ public class AirlineInformation {
      * Gets the plane type of the airline.
      * @return The plane type.
      */
-    public getPlaneType() {
+    public String getPlaneType() {
         return planeType;
     }
 
@@ -29,7 +29,7 @@ public class AirlineInformation {
      * Gets the terminal number of the airline.
      * @return The terminal number.
      */
-    public getTerminalNumber() {
+    public String getTerminalNumber() {
         return terminalNumber;
     }
 
@@ -37,7 +37,7 @@ public class AirlineInformation {
      * Gets the airline name.
      * @return The airline name.
      */
-    public getAirlineName() {
+    public String getAirlineName() {
         return airlineName;
     }
 }
