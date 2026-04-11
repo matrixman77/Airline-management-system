@@ -69,5 +69,9 @@ public class AirlineManagement {
     public void removeAirlineName(String airName) {
         this.airName.remove(airName);
     }
+
+    public void addFlightNumber(String flightNumber) {
+        this.flightNumbers.add(flightNumber);
+    }
 }
 
