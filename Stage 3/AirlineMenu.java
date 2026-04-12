@@ -539,11 +539,11 @@ public static void adminMenu()
     
     public static void displaySchedule()
     {
-		System.out.println(scheduleMgmt.getDepartureTime());
-		System.out.println(scheduleMgmt.getArrivalTime());
-		System.out.println(scheduleMgmt.getDelayedFlight());
-		System.out.println(scheduleMgmt.getCancelledFlight());
-		System.out.println(scheduleMgmt.getBoardingTime());
+		System.out.println("Departure Time" + scheduleMgmt.getDepartureTime());
+		System.out.println("Arrival Time" + scheduleMgmt.getArrivalTime());
+		System.out.println("Delayed Flights" + scheduleMgmt.getDelayedFlight());
+		System.out.println("Cancelled Flights" + scheduleMgmt.getCancelledFlight());
+		System.out.println("Boarding Time" + scheduleMgmt.getBoardingTime());
     }     	
 	
 	public static boolean checkPassword()
