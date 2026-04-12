@@ -64,12 +64,12 @@ public static void adminMenu()
 {
     while (true)
     {
-        System.out.println("----- Admin Menu -----");
-        System.out.println("1. Load Dummy Passengers");
-        System.out.println("2. Load Dummy Staff");
-        System.out.println("3. Print Passenger Report");
-        System.out.println("4. Print Staff Report");
-        System.out.println("5. Return to Main Menu");
+        System.out.println("---------- Admin Menu ----------");
+        System.out.println("   1. Load Dummy Passengers");
+        System.out.println("   2. Load Dummy Staff");
+        System.out.println("   3. Print Passenger Report");
+        System.out.println("   4. Print Staff Report");
+        System.out.println("   5. Return to Main Menu");
         System.out.print("Enter your choice: ");
 
         int choice = in.nextInt();
@@ -102,13 +102,13 @@ public static void adminMenu()
     {
         while (true)
         {
-            System.out.println("----- Passenger Menu -----");
-            System.out.println("1. Add Passenger");
-            System.out.println("2. View Passengers");
-			System.out.println("3. Airline Information");
-            System.out.println("4. Schedule");
-			System.out.println("5. Booking Menu");
-			System.out.println("6. Return to Main Menu");
+            System.out.println("---------- Passenger Menu ----------");
+            System.out.println("   1. Add Passenger");
+            System.out.println("   2. View Passengers");
+			System.out.println("   3. Airline Information");
+            System.out.println("   4. Schedule");
+			System.out.println("   5. Booking Menu");
+			System.out.println("   6. Return to Main Menu");
             System.out.print("Enter your choice: ");
 
             int choice = in.nextInt();
@@ -143,15 +143,15 @@ public static void adminMenu()
     {
         while (true)
         {
-            System.out.println("----- Staff Menu -----");
-            System.out.println("1. Add Staff");
-            System.out.println("2. View Staff");
-            System.out.println("3. View Passenger Tickets");
-            System.out.println("4. Delete Passenger Ticket");
-			System.out.println("5. Airline Information");
-            System.out.println("6. Schedule Menu");
-			System.out.println("7. Airline Menu");
-			System.out.println("8. Return to Main Menu");
+            System.out.println("---------- Staff Menu ----------");
+            System.out.println("   1. Add Staff");
+            System.out.println("   2. View Staff");
+            System.out.println("   3. View Passenger Tickets");
+            System.out.println("   4. Delete Passenger Ticket");
+			System.out.println("   5. Airline Information");
+            System.out.println("   6. Schedule Menu");
+			System.out.println("   7. Airline Menu");
+			System.out.println("   8. Return to Main Menu");
             System.out.print("Enter your choice: ");
 
             int choice = in.nextInt();
@@ -192,14 +192,14 @@ public static void adminMenu()
 	{
         while (true) 
 		{
-            System.out.println("----Airline Management----");
-            System.out.println("1. Add a flight");
-            System.out.println("2. Add a terminal number");
-            System.out.println("3. Add an airline name");
-            System.out.println("4. Remove a flight number");
-            System.out.println("5. Remove a terminal number");
-            System.out.println("6. Remove an airline name");
-			System.out.println("7. Return to Previous Menu");
+            System.out.println("---------Airline Management---------");
+            System.out.println("   1. Add a flight");
+            System.out.println("   2. Add a terminal number");
+            System.out.println("   3. Add an airline name");
+            System.out.println("   4. Remove a flight number");
+            System.out.println("   5. Remove a terminal number");
+            System.out.println("   6. Remove an airline name");
+			System.out.println("   7. Return to Previous Menu");
 			System.out.print("Enter your choice: ");
 
             int choice = in.nextInt();
@@ -237,10 +237,10 @@ public static void adminMenu()
     {
         while (true)
         {
-            System.out.println("----- Booking Menu -----");
-            System.out.println("1. Create Ticket");
-            System.out.println("2. View Tickets");
-			System.out.println("3. Return to Previous Menu");
+            System.out.println("---------- Booking Menu ----------");
+            System.out.println("   1. Create Ticket");
+            System.out.println("   2. View Tickets");
+			System.out.println("   3. Return to Previous Menu");
             System.out.print("Enter your choice: ");
 
             int choice = in.nextInt();
@@ -264,14 +264,14 @@ public static void adminMenu()
 
 	public static void scheduleMenu() {
         while (true) {
-            System.out.println("----Schedule Information----");
-            System.out.println("1. Update departure time");
-            System.out.println("2. Update arrival time");
-            System.out.println("3. Update delayed flight");
-            System.out.println("4. Update cancelled flight");
-            System.out.println("5. Update boarding time");
-            System.out.println("6. Display schedule");
-            System.out.println("7. Return to Previous Menu");
+            System.out.println("---------Schedule Information---------");
+            System.out.println("   1. Update departure time");
+            System.out.println("   2. Update arrival time");
+            System.out.println("   3. Update delayed flight");
+            System.out.println("   4. Update cancelled flight");
+            System.out.println("   5. Update boarding time");
+            System.out.println("   6. Display schedule");
+            System.out.println("   7. Return to Previous Menu");
 			System.out.print("Enter your choice: ");
 
             int choice = in.nextInt();
