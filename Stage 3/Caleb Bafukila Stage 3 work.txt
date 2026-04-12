@@ -1,0 +1,4 @@
+Caleb Bafukila Stage 3 work (Stage leader)
+
+Created classes: Staff, StaffManagment, Passanger, Passangermanagment, and the person class. 
+We worked collaboratively on the Main menu class. 
