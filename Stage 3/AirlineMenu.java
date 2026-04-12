@@ -1,7 +1,10 @@
 import java.util.Scanner;
 import java.time.LocalDate;
 import java.util.ArrayList;
-
+/**
+ * AirlineMenu class provides a console-based menu system for managing an airline's operations, including passengers, staff, flights, tickets, and schedules. 
+ * It allows users to navigate through different menus to perform various actions such as adding passengers, viewing staff, managing flights, and updating schedules.
+ */
 public class AirlineMenu
 {
     static Scanner in = new Scanner(System.in);
@@ -14,11 +17,17 @@ public class AirlineMenu
 	static ScheduleManagement scheduleMgmt = new ScheduleManagement();
     static BookingManagement bookingMgmt;
     
+    /**
+     * Displays the main menu.
+     */
 	public static void main(String[] args) 
 	{
 		Menu();
 	}
-	
+    
+    /**
+     * Displays the main menu.
+     */
 	public static void Menu()
 	{
 	    while (true)
@@ -59,7 +68,10 @@ public class AirlineMenu
             }
         }
     }
-	
+
+/**
+ * Displays the admin menu.
+ */
 public static void adminMenu()
 {
     while (true)
@@ -78,11 +90,11 @@ public static void adminMenu()
         switch (choice)
         {
             case 1:
-                passengerManager.displayAllPassengers();
+                passengerManager.loadDummyPassengers();
                 System.out.println("Dummy passengers loaded.");
                 break;
             case 2:
-                staffManager.displayAllStaff();
+                staffManager.loadDummyStaff();
                 System.out.println("Dummy staff loaded.");
                 break;
             case 3:
@@ -98,6 +110,9 @@ public static void adminMenu()
         }
     }
 }
+    /**
+     * Displays the passenger menu.
+     */
     public static void passengerMenu()
     {
         while (true)
@@ -139,6 +154,9 @@ public static void adminMenu()
         }
     }
 
+    /**
+     * Displays the staff menu.
+     */
     public static void staffMenu()
     {
         while (true)
@@ -188,6 +206,9 @@ public static void adminMenu()
         }
     }
 	
+    /**
+     * Displays the airline management menu.
+     */
     public static void airlineMenu() 
 	{
         while (true) 
@@ -233,6 +254,9 @@ public static void adminMenu()
         }
     }
 
+    /**
+     * Displays the booking menu.
+     */
 	 public static void bookingMenu()
     {
         while (true)
@@ -262,6 +286,9 @@ public static void adminMenu()
         }
     }
 
+    /**
+     * Displays the schedule menu.
+     */
 	public static void scheduleMenu() {
         while (true) {
             System.out.println("---------Schedule Information---------");
@@ -306,6 +333,7 @@ public static void adminMenu()
         }
     }
 
+  /** Adds a new passenger. */
   public static void addPassenger()
   {
     System.out.print("Enter passenger ID: ");
@@ -330,12 +358,18 @@ public static void adminMenu()
     System.out.println("Passenger added successfully.");
     }
     
+    /**
+     * Views all passengers.
+     */
     public static void viewPassengers()
     {
 		passengerManager.displayAllPassengers();
 
     }
     
+    /**
+     * Adds a new staff member.
+     */
     public static void addStaff()
     {
     System.out.print("Enter staff ID: ");
@@ -362,11 +396,17 @@ public static void adminMenu()
     System.out.println("Staff member added successfully.");
     }
     
+    /**
+     * Displays all staff members.
+     */
     public static void viewStaff()
     {
         staffManager.displayAllStaff();
     }
     
+    /**
+     * Adds a flight number.
+     */
     public static void addFlightNumber()
     {  
         System.out.println("Enter FLight Number: ");
@@ -375,6 +415,9 @@ public static void adminMenu()
         System.out.println("Flight number added.");
     }
     
+    /**
+     * Adds a terminal number.
+     */
     public static void addTerminalNumber()
     {
 	    System.out.println("Enter the Terminal Number:");
@@ -383,6 +426,9 @@ public static void adminMenu()
 		System.out.println("Terminal number added.");
     }
     
+    /**
+     * Adds an airline name.
+     */
     public static void addAirlineName()
     {
 	    System.out.println("Enter the Airline Name:");
@@ -391,6 +437,9 @@ public static void adminMenu()
 		System.out.println("Airline name added.");
     }
     
+    /**
+     * Removes a flight number.
+     */
     public static void removeFlightNumber()
     {
 	    System.out.println("Enter the Flight Number you would like to remove:");
@@ -399,6 +448,9 @@ public static void adminMenu()
 		System.out.println("Flight number removed.");
     }
     
+    /**
+     * Removes a terminal number.
+     */
     public static void removeTerminalNumber()
     {
 	    System.out.println("Enter the Terminal Number you would like to remove:");
@@ -407,6 +459,9 @@ public static void adminMenu()
 		System.out.println("Terminal Number Removed.");
     }
     
+    /**
+     * Removes an airline name.
+     */
     public static void removeAirlineName()
     {
 	    System.out.println("Enter the Airline Name you would like to remove:");
@@ -415,6 +470,9 @@ public static void adminMenu()
 		System.out.println("Airline name removed.");
     }
 
+    /**
+     * Views the airline information.
+     */
 	public static void viewAirlineInfo() 
     {
         System.out.println("----- Airline Information -----");
@@ -438,6 +496,9 @@ public static void adminMenu()
         }
     }
     
+    /**
+     * Creates a new ticket.
+     */
     public static void createTicket()
     {
         System.out.println("Enter Ticket Number: ");
@@ -468,6 +529,9 @@ public static void adminMenu()
         System.out.println("Ticket Created.");
     }
     
+    /**
+     * Views all tickets.
+     */
     public static void viewTickets()
     {
         System.out.println("List of Tickets");
@@ -480,6 +544,9 @@ public static void adminMenu()
         }
     }
     
+    /**
+     * Deletes a ticket.
+     */
     public static void deleteTickets()
     {
         System.out.println("Enter ticket number to delete: ");
@@ -497,6 +564,9 @@ public static void adminMenu()
         }
     }
     
+    /**
+     * Updates the departure time for flights.
+     */
     public static void updateDepartureTime()
     {
 	    System.out.println("Enter the departure time you would like to add:");
@@ -505,6 +575,9 @@ public static void adminMenu()
 		System.out.println("Departure time updated.");
     }
     
+    /**
+     * Updates the arrival time for flights.
+     */
     public static void updateArrivalTime()
     {
 	    System.out.println("Enter the arrival time you would like to add:");
@@ -513,6 +586,9 @@ public static void adminMenu()
 		System.out.println("Arrival time updated.");
     }
     
+    /**
+     * Updates the delayed flight information.
+     */
     public static void updateDelayedFlight()
     {
 	    System.out.println("Enter the delayed flight:");
@@ -521,6 +597,9 @@ public static void adminMenu()
 		System.out.println("Delayed flights updated.");
     }
     
+    /**
+     * Updates the cancelled flight information.
+     */
     public static void updateCancelledFlight()
     {
 	    System.out.println("Enter the cancelled flight:");
@@ -528,7 +607,10 @@ public static void adminMenu()
 		scheduleMgmt.updateCancelledFlight(cancelledFlight);
 		System.out.println("Cancelled flights updated.");
     }
-
+    
+    /**
+     * Updates the boarding time for flights.
+     */
     public static void updateBoardingTime()
     {
 	    System.out.println("Enter the boarding time:");
@@ -537,6 +619,9 @@ public static void adminMenu()
 		System.out.println("Boarding time updated.");
     }
     
+    /**
+     * Displays the flight schedule.
+     */
     public static void displaySchedule()
     {
 		System.out.println("Departure Time" + scheduleMgmt.getDepartureTime());
@@ -546,6 +631,10 @@ public static void adminMenu()
 		System.out.println("Boarding Time" + scheduleMgmt.getBoardingTime());
     }     	
 	
+    /**
+     * Checks the user's password.
+     * @return true if the password is correct, false otherwise
+     */
 	public static boolean checkPassword()
    {
 	   while (true)
