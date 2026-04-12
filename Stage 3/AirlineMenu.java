@@ -105,9 +105,10 @@ public static void adminMenu()
             System.out.println("----- Passenger Menu -----");
             System.out.println("1. Add Passenger");
             System.out.println("2. View Passengers");
-            System.out.println("3. Schedule");
-			System.out.println("4. Booking Menu");
-			System.out.println("5. Return to Main Menu");
+			System.out.println("2. Airline Information");
+            System.out.println("4. Schedule");
+			System.out.println("5. Booking Menu");
+			System.out.println("6. Return to Main Menu");
             System.out.print("Enter your choice: ");
 
             int choice = in.nextInt();
@@ -122,12 +123,15 @@ public static void adminMenu()
                     viewPassengers();
                     break;
 				case 3:
-					displaySchedule();
+					viewAirlineInfo();
 					break;
 				case 4:
+					displaySchedule();
+					break;
+				case 5:
                     bookingMenu();
                     break;
-                case 5:
+                case 6:
                     return;
                 default:
                     System.out.println("Invalid choice. Try again.");
@@ -144,9 +148,10 @@ public static void adminMenu()
             System.out.println("2. View Staff");
             System.out.println("3. View Passenger Tickets");
             System.out.println("4. Delete Passenger Ticket");
-            System.out.println("5. Schedule Menu");
-			System.out.println("6. Airline Menu");
-			System.out.println("7. Return to Main Menu");
+			System.out.println("5. Airline Information");
+            System.out.println("6. Schedule Menu");
+			System.out.println("7. Airline Menu");
+			System.out.println("8. Return to Main Menu");
             System.out.print("Enter your choice: ");
 
             int choice = in.nextInt();
@@ -167,12 +172,15 @@ public static void adminMenu()
                     deleteTickets();
                     break;
 				case 5:
+					viewAirlineInfo();
+					break;
+				case 6:
                     scheduleMenu();
                     break;
-				case 6:
+				case 7:
                     airlineMenu();
                     break;
-                case 7:
+                case 8:
                     return;
                 default:
                     System.out.println("Invalid choice. Try again.");
@@ -406,6 +414,29 @@ public static void adminMenu()
 		airlineMgmt.removeAirlineName(airlineName);
 		System.out.println("Airline name removed.");
     }
+
+	public static void viewAirlineInfo() 
+    {
+        System.out.println("Airline Information");
+   
+        System.out.println("Flight Numbers: ");
+        for (String f : airlineMgmt.getFlightNumber()) 
+        {
+            System.out.println("- " + f);
+        }
+   
+        System.out.println("\nTerminal Numbers: ");
+        for (String t : airlineMgmt.getTerminalNumber()) 
+        {
+            System.out.println("- " + t);
+        }
+   
+        System.out.println("\nAirline Names: ");
+        for (String a : airlineMgmt.getAirlineName()) 
+        {
+            System.out.println("- " + a);
+        }
+    }
     
     public static void createTicket()
     {
@@ -506,13 +537,14 @@ public static void adminMenu()
 		System.out.println("Boarding time updated.");
     }
     
-    public static void displaySchedule{
-		System.out.println(scheduleMgmt.getDepartureTime);
-		System.out.println(scheduleMgmt.getArrivalTime);
-		System.out.println(scheduleMgmt.getDelayedFlight);
-		System.out.println(scheduleMgmt.getCancelledFlight);
-		System.out.println(scheduleMgmt.getBoardingTime);
-	}
+    public static void displaySchedule()
+    {
+		System.out.println(scheduleMgmt.getDepartureTime());
+		System.out.println(scheduleMgmt.getArrivalTime());
+		System.out.println(scheduleMgmt.getDelayedFlight());
+		System.out.println(scheduleMgmt.getCancelledFlight());
+		System.out.println(scheduleMgmt.getBoardingTime());
+    }     	
 	
 	public static boolean checkPassword()
    {
