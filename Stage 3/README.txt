@@ -1,15 +1,10 @@
 README.txt
 
-Both files contained in folder/.exe file
+All files contained in Stage 3 folder
 
 Description:
-EasterSunday.java
-Is a day finder program built to find Easter day on any year.
-Prompts the user for a year and displays the year, month, and day that that Easter day is on.
-
-LaborDay.java
-Is a day finder program built to find Labor day on any year.
-Prompts the user for a year and displays the year, month, and day that that Labor day is on.
+Airline System that manages certain tasks such as passengers, booking, schedule, etc.
+Compile all classes before compiling AirlineMenu.java.
 
 Prerequisites.
 JVM (Java Virtual Machine)
@@ -27,7 +22,3 @@ Running Instructions with IDE:
 2. Use the compiler native to the IDE. 
 NOTE: (If the IDE in use does not have a compiler use the first two steps from 'Running Instructions without IDE')
 3. Use the excecute or run button to run the program.
-
-NOTES: 
-These programs were written, compiled, and excecuted on https://www.onlinegdb.com.
-These programs were compiled and excecuted on the system command prompt for windows using the .javac and the .java commands.
