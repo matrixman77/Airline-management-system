@@ -64,7 +64,7 @@ public class ScheduleManagement {
     }
 
     public ArrayList<Short> getDepartureTime() {
-        return departureTime;
+        return departureTimes;
     }
 
     /**
@@ -72,7 +72,7 @@ public class ScheduleManagement {
      * @return The arrival time.
      */
     public ArrayList<Short> getArrivalTime() {
-        return arrivalTime;
+        return arrivalTimes;
     }
 
     /**
@@ -80,7 +80,7 @@ public class ScheduleManagement {
      * @return The delayed flight status.
      */
     public ArrayList<Short> getDelayedFlight() {
-        return delayedFlight;
+        return delayedFlights;
     }
 
     /**
@@ -88,7 +88,7 @@ public class ScheduleManagement {
      * @return The cancelled flight status.
      */
     public ArrayList<Short> getCancelledFlight() {
-        return cancelledFlight;
+        return cancelledFlights;
     }
 
     /**
@@ -96,6 +96,6 @@ public class ScheduleManagement {
      * @return The boarding time.
      */
     public ArrayList<Short> getBoardingTime() {
-        return boardingTime;
+        return boardingTimes;
     }
 }
