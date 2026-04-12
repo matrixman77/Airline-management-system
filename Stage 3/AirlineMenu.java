@@ -417,7 +417,7 @@ public static void adminMenu()
 
 	public static void viewAirlineInfo() 
     {
-        System.out.println("Airline Information");
+        System.out.println("----- Airline Information -----");
    
         System.out.println("Flight Numbers: ");
         for (String f : airlineMgmt.getFlightNumber()) 
@@ -431,7 +431,7 @@ public static void adminMenu()
             System.out.println("- " + t);
         }
    
-        System.out.println("\nAirline Names: ");
+        System.out.println("\nAirline Name: ");
         for (String a : airlineMgmt.getAirlineName()) 
         {
             System.out.println("- " + a);
