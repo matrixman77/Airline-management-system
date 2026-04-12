@@ -78,11 +78,11 @@ public static void adminMenu()
         switch (choice)
         {
             case 1:
-                passengerManager.loadDummyPassengers();
+                passengerManager.displayAllPassengers();
                 System.out.println("Dummy passengers loaded.");
                 break;
             case 2:
-                staffManager.loadDummyStaff();
+                staffManager.displayAllStaff();
                 System.out.println("Dummy staff loaded.");
                 break;
             case 3:
