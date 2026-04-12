@@ -105,7 +105,7 @@ public static void adminMenu()
             System.out.println("----- Passenger Menu -----");
             System.out.println("1. Add Passenger");
             System.out.println("2. View Passengers");
-			System.out.println("2. Airline Information");
+			System.out.println("3. Airline Information");
             System.out.println("4. Schedule");
 			System.out.println("5. Booking Menu");
 			System.out.println("6. Return to Main Menu");
