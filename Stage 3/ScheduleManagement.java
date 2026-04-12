@@ -3,11 +3,11 @@
  * This class is used to manage the flight schedule information.
  */
 public class ScheduleManagement {
-    private ArrayList<departureTime> departureTimes;
-    private ArrayList<arrivalTime> arrivalTimes;
-    private ArrayList<delayedFlight> delayedFlights;
-    private ArrayList<cancelledFlight> cancelledFlights;
-    private ArrayList<boardingTime> boardingTimes;
+    private ArrayList<Short> departureTimes;
+    private ArrayList<Short> arrivalTimes;
+    private ArrayList<Short> delayedFlights;
+    private ArrayList<Short> cancelledFlights;
+    private ArrayList<Short> boardingTimes;
     
     /**
      * Constructs a new ScheduleManagement object.
@@ -63,7 +63,7 @@ public class ScheduleManagement {
         this.boardingTimes.add(boardingTime);
     }
 
-    public short getDepartureTime() {
+    public ArrayList<Short> getDepartureTime() {
         return departureTime;
     }
 
@@ -71,7 +71,7 @@ public class ScheduleManagement {
      * Gets the arrival time of the flight.
      * @return The arrival time.
      */
-    public short getArrivalTime() {
+    public ArrayList<Short> getArrivalTime() {
         return arrivalTime;
     }
 
@@ -79,7 +79,7 @@ public class ScheduleManagement {
      * Gets the delayed flight status.
      * @return The delayed flight status.
      */
-    public short getDelayedFlight() {
+    public ArrayList<Short> getDelayedFlight() {
         return delayedFlight;
     }
 
@@ -87,7 +87,7 @@ public class ScheduleManagement {
      * Gets the cancelled flight status.
      * @return The cancelled flight status.
      */
-    public short getCancelledFlight() {
+    public ArrayList<Short> getCancelledFlight() {
         return cancelledFlight;
     }
 
@@ -95,7 +95,7 @@ public class ScheduleManagement {
      * Gets the boarding time of the flight.
      * @return The boarding time.
      */
-    public short getBoardingTime() {
+    public ArrayList<Short> getBoardingTime() {
         return boardingTime;
     }
 }
