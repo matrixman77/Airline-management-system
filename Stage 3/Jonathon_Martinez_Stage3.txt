@@ -1,0 +1,1 @@
+For this stage, I coded and edited the classes: ScheduleManagement, ScheduleInformation, AirlineManagement,and AirlineInformation. I also collaborated with my teammates to create the Airline Menu and contributed to several methods in that class.
