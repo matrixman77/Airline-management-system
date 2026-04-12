@@ -1,0 +1,12 @@
+Work done
+Created Ticket Class and added it to the GitHub repository.
+Created Ticket Management Class and added it to the GitHub repository.
+Created Flight Class and added it to the GitHub repository.
+Created Flight Management Class and added it to the GitHub repository.
+Created Booking Class and added it to the GitHub repository.
+Created Booking Management Class and added it to the GitHub repository.
+Worked on AirlineMenu Class collaboratively in the GitHub repository.
+Adjusted the UML diagram while working through stage 3.
+Created README.txt file
+
+
