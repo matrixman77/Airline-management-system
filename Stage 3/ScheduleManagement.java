@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 /**
  * @author Jonathon Martinez
  * This class is used to manage the flight schedule information.
@@ -42,7 +43,7 @@ public class ScheduleManagement {
      * @return true if the update was successful, false otherwise
      */
     public boolean updateDelayedFlight(short delayedFlight) {
-        this.delayedFlights.add(delayedFlight);
+        return this.delayedFlights.add(delayedFlight);
     }
 
     /**
