@@ -22,6 +22,7 @@ public class AirlineMenu
      */
 	public static void main(String[] args) 
 	{
+		loadDummyData();
 		Menu();
 	}
     
@@ -657,4 +658,22 @@ public static void adminMenu()
         System.out.println("Incorrect password. Try again.");
       }
    }
+
+	public static void loadDummyData()
+{
+    passengerManager.loadDummyPassengers();
+    staffManager.loadDummyStaff();
+
+    System.out.println("\n====================================");
+    System.out.println("       DUMMY DATA LOADED");
+    System.out.println("====================================");
+
+    System.out.println("\n----- DUMMY PASSENGERS -----");
+    passengerManager.displayAllPassengers();
+
+    System.out.println("\n----- DUMMY STAFF -----");
+    staffManager.displayAllStaff();
+
+    System.out.println("====================================\n");
+}
 }
