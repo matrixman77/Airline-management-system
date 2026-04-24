@@ -5,7 +5,7 @@ import java.util.ArrayList;
  * AirlineMenu class provides a console-based menu system for managing an airline's operations, including passengers, staff, flights, tickets, and schedules. 
  * It allows users to navigate through different menus to perform various actions such as adding passengers, viewing staff, managing flights, and updating schedules.
  */
-public class AirlineMenu
+public class Main
 {
     static Scanner in = new Scanner(System.in);
 
