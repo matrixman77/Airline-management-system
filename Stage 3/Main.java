@@ -78,11 +78,9 @@ public static void adminMenu()
     while (true)
     {
         System.out.println("---------- Admin Menu ----------");
-        System.out.println("   1. Load Dummy Passengers");
-        System.out.println("   2. Load Dummy Staff");
-        System.out.println("   3. Print Passenger Report");
-        System.out.println("   4. Print Staff Report");
-        System.out.println("   5. Return to Main Menu");
+		System.out.println("   1. Print Passenger Report");
+        System.out.println("   2. Print Staff Report");
+        System.out.println("   3. Return to Main Menu");
         System.out.print("Enter your choice: ");
 
         int choice = in.nextInt();
@@ -91,20 +89,15 @@ public static void adminMenu()
         switch (choice)
         {
             case 1:
-                passengerManager.loadDummyPassengers();
-                System.out.println("Dummy passengers loaded.");
+                passengerManager.printPassengerReport();
+				passengerManager.displayAllPassengers();
                 break;
             case 2:
-                staffManager.loadDummyStaff();
-                System.out.println("Dummy staff loaded.");
+                staffManager.printStaffReport();
+				staffManager.displayAllStaff();
+				
                 break;
             case 3:
-                passengerManager.printPassengerReport();
-                break;
-            case 4:
-                staffManager.printStaffReport();
-                break;
-            case 5:
                 return;
             default:
                 System.out.println("Invalid choice. Try again.");
