@@ -80,7 +80,9 @@ public static void adminMenu()
         System.out.println("---------- Admin Menu ----------");
 		System.out.println("   1. Print Passenger Report");
         System.out.println("   2. Print Staff Report");
-        System.out.println("   3. Return to Main Menu");
+		System.out.println("   3. Search Staff");
+        System.out.println("   4. Delete Staff");
+        System.out.println("   5. Return to Main Menu");
         System.out.print("Enter your choice: ");
 
         int choice = in.nextInt();
@@ -95,9 +97,14 @@ public static void adminMenu()
             case 2:
                 staffManager.printStaffReport();
 				staffManager.displayAllStaff();
-				
                 break;
-            case 3:
+			case 3:
+                searchStaff();
+                break;
+            case 4:
+              deleteStaff();
+                break;
+            case 5:
                 return;
             default:
                 System.out.println("Invalid choice. Try again.");
@@ -163,7 +170,9 @@ public static void adminMenu()
 			System.out.println("   5. Airline Information");
             System.out.println("   6. Schedule Menu");
 			System.out.println("   7. Airline Menu");
-			System.out.println("   8. Return to Main Menu");
+			 System.out.println("  8. Search Passanger");
+			System.out.println("   9. Delete Passenger");
+			System.out.println("   10. Return to Main Menu");
             System.out.print("Enter your choice: ");
 
             int choice = in.nextInt();
@@ -192,7 +201,13 @@ public static void adminMenu()
 				case 7:
                     airlineMenu();
                     break;
-                case 8:
+				case 8:
+                    searchPassenger();
+                    break;
+				case 9:
+                    deletePassenger();
+                    break;
+                case 10:
                     return;
                 default:
                     System.out.println("Invalid choice. Try again.");
@@ -668,5 +683,73 @@ public static void adminMenu()
     staffManager.displayAllStaff();
 
     System.out.println("====================================\n");
+}
+	public static void deletePassenger()
+{
+    System.out.print("Enter passenger ID to delete: ");
+    int id = in.nextInt();
+    in.nextLine();
+
+    boolean deleted = passengerManager.deletePassenger(id);
+
+    if (deleted)
+    {
+        System.out.println("Passenger deleted successfully.");
+    }
+    else
+    {
+        System.out.println("Passenger not found.");
+    }
+}
+	public static void searchPassenger()
+{
+    System.out.print("Enter passenger ID: ");
+    int id = in.nextInt();
+    in.nextLine();
+
+    Passenger passenger = passengerManager.searchPassengerById(id);
+
+    if (passenger != null)
+    {
+        System.out.println(passenger);
+    }
+    else
+    {
+        System.out.println("Passenger not found.");
+    }
+}
+	public static void deleteStaff()
+{
+    System.out.print("Enter staff ID to delete: ");
+    int id = in.nextInt();
+    in.nextLine();
+
+    boolean deleted = staffManager.deleteStaff(id);
+
+    if (deleted)
+    {
+        System.out.println("Staff member deleted successfully.");
+    }
+    else
+    {
+        System.out.println("Staff member not found.");
+    }
+}
+	public static void searchStaff()
+{
+    System.out.print("Enter staff ID: ");
+    int id = in.nextInt();
+    in.nextLine();
+
+    Staff staff = staffManager.searchStaffById(id);
+
+    if (staff != null)
+    {
+        System.out.println(staff);
+    }
+    else
+    {
+        System.out.println("Staff member not found.");
+    }
 }
 }
