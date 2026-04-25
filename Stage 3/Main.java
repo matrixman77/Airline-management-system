@@ -170,7 +170,7 @@ public static void adminMenu()
 			System.out.println("   5. Airline Information");
             System.out.println("   6. Schedule Menu");
 			System.out.println("   7. Airline Menu");
-			 System.out.println("  8. Search Passanger");
+			System.out.println("   8. Search Passanger");
 			System.out.println("   9. Delete Passenger");
 			System.out.println("   10. Return to Main Menu");
             System.out.print("Enter your choice: ");
