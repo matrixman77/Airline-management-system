@@ -33,7 +33,7 @@ public class Main
 	{
 	    while (true)
 	    {
-			System.out.println("Welcome to Eduwardo Airlines Management System");
+			System.out.println("Welcome to Edwardo Airlines Management System");
 	        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 		    System.out.println("         Airline Management Menu");
 	        System.out.println("          1. Passenger Menu");
