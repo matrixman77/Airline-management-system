@@ -33,7 +33,7 @@ public class Main
 	{
 	    while (true)
 	    {
-			System.out.println("Welcome to Eduwardo Airlines Management System");
+			System.out.println("Welcome to Eduardo Airlines Management System");
 	        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 		    System.out.println("         Airline Management Menu");
 	        System.out.println("          1. Passenger Menu");
@@ -512,10 +512,10 @@ public static void adminMenu()
     {
         System.out.println("Enter Ticket Number: ");
         int ticketNum = in.nextInt();
+        in.nextLine();
         
         System.out.println("The price is $100.");
         float price = 100;
-        in.nextLine();
     
         System.out.println("Enter flight class: ");
         String fClass = in.nextLine();
@@ -523,16 +523,33 @@ public static void adminMenu()
         System.out.println("Enter Flight Date YYYY-MM-DD (Enter date exactly as formatted): ");        
         LocalDate date = LocalDate.parse(in.nextLine());
         
+        System.out.println("Enter Passenger ID: ");
+        int pid = in.nextInt();
+        in.nextLine();
+        Passenger passenger = passengerManager.searchPassengerById(pid);
+        if (passenger == null)
+        {
+           System.out.println("Passenger Not Found!");
+           return;
+        }
+        
+        System.out.println("The Airline is Eduardo Airlines");
+        String airlineName = "Eduardo Airlines" ;
+        
         System.out.println("Current Destinations (Honolulu HI, Fairbanks AK) ");
         System.out.println("Enter Flight Destination: ");
         String dest = in.nextLine();
-    
+                
         System.out.println("Portales NM is your starting location.");
         String start = "Portales NM";
         
         Flight f = new Flight(dest, start, (short)3000, (short)800);
+        
+        ArrayList<Short> departureTimes = scheduleMgmt.getDepartureTime();
+        ArrayList<Short> arrivalTimes = scheduleMgmt.getArrivalTime();
+        ArrayList<Short> boardingTime = scheduleMgmt.getBoardingTime();
     
-        Ticket t = new Ticket(ticketNum, price, fClass, date, f);
+        Ticket t = new Ticket(ticketNum, price, fClass, date, f, passenger, departureTimes, arrivalTimes, boardingTime);
         ticketMgmt.addTicket(t);
     
         System.out.println("Ticket Created.");
@@ -550,6 +567,14 @@ public static void adminMenu()
             System.out.println("Price: " + t.getPrice());
             System.out.println("Class: " + t.getFlightClass());
             System.out.println("Date: " + t.getFlightDate());
+            System.out.println("Passenger: " + t.getPassenger().getFirstName() + " " + t.getPassenger().getLastName());
+            System.out.println("The Airline is Eduardo Airlines");
+            System.out.println("Flight: " + t.getFlight().getStartLocal() + " -> " + t.getFlight().getDestination());
+            System.out.println("Schedule:");
+            System.out.println("Departure: " + t.getDepartureTimes());
+            System.out.println("Arrival: " + t.getArrivalTimes());
+            System.out.println("Boarding: " + t.getBoardingTimes());
+            
         }
     }
     
@@ -681,6 +706,28 @@ public static void adminMenu()
 
     System.out.println("\n----- DUMMY STAFF -----");
     staffManager.displayAllStaff();
+
+	airlineMgmt.addAirlineName("Eduardo Airlines");
+    
+    airlineMgmt.addTerminalNumber("T1");
+    airlineMgmt.addTerminalNumber("T2");
+    
+    airlineMgmt.addFlightNumber("SW123");
+    airlineMgmt.addFlightNumber("DL456");
+    
+    Flight f1 = new Flight("Honolulu HI", "Portales NM", (short)3000, (short)800);
+    Flight f2 = new Flight("Fairbanks AK", "Portales NM", (short)3200, (short)900);
+    
+    scheduleMgmt.updateDepartureTime((short) 900);
+    scheduleMgmt.updateArrivalTime((short) 1400);
+    scheduleMgmt.updateBoardingTime((short) 830);
+
+    scheduleMgmt.updateDepartureTime((short) 1100);
+    scheduleMgmt.updateArrivalTime((short) 1600);
+    scheduleMgmt.updateBoardingTime((short) 1030);
+
+    scheduleMgmt.updateDelayedFlight((short) 15);
+    scheduleMgmt.updateCancelledFlight((short) 12);
 
     System.out.println("====================================\n");
 }
