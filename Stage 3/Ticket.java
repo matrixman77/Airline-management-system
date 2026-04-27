@@ -1,6 +1,7 @@
 /** 
 * Tyler Barber
 */
+import java.util.ArrayList;
 import java.time.LocalDate;
 
 public class Ticket
@@ -11,7 +12,12 @@ public class Ticket
     private LocalDate flightDate;
     private Flight flight;
     private String seatNumber;
-/** 
+    private Passenger passenger;
+    private ArrayList<Short> departureTimes;
+    private ArrayList<Short> arrivalTimes;
+    private ArrayList<Short> boardingTimes;
+
+/**
 * This constructor sets the instance variables to each other
 * @param ticketNumber, the ticket number
 * @param price, the ticket price
@@ -19,13 +25,17 @@ public class Ticket
 * @param flightDate, the date of the flight
 * @param flight, the flight
 */
-    public Ticket (int ticketNumber, float price, String flightClass, LocalDate flightDate, Flight flight)
+    public Ticket (int ticketNumber, float price, String flightClass, LocalDate flightDate, Flight flight, Passenger passenger, ArrayList<Short> departureTimes, ArrayList<Short> arrivalTimes, ArrayList<Short> boardingTimes)
     {
         this.price = price;
         this.ticketNumber = ticketNumber;
         this.flightClass = flightClass;
         this.flightDate = flightDate;
         this.flight = flight;
+        this.passenger = passenger;
+        this.departureTimes = departureTimes;
+        this.arrivalTimes = arrivalTimes;
+        this.boardingTimes = boardingTimes;
     }
 /** 
 * This method assigns the seat number to the reserved seat
@@ -82,6 +92,38 @@ public class Ticket
     public String getSeatNumber()
     {
         return seatNumber;
+    }
+/** 
+* This method returns the passenger
+* @return, the passenger
+*/
+    public Passenger getPassenger()
+    {
+        return passenger;
+    }  
+/** 
+* This method returns the departure times
+* @return, the departure times
+*/
+    public ArrayList<Short> getDepartureTimes()
+    {
+        return departureTimes;
+    }
+/** 
+* This method returns the arrival times
+* @return, the arrival times
+*/
+    public ArrayList<Short> getArrivalTimes()
+    {
+        return arrivalTimes;
+    }
+/** 
+* This method returns the boarding times
+* @return, the boarding times
+*/
+    public ArrayList<Short> getBoardingTimes()
+    {
+        return boardingTimes;
     }
 /** 
 * This method sets the price
