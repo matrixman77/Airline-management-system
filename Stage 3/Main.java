@@ -82,7 +82,8 @@ public static void adminMenu()
         System.out.println("   2. Print Staff Report");
 		System.out.println("   3. Search Staff");
         System.out.println("   4. Delete Staff");
-        System.out.println("   5. Return to Main Menu");
+		System.out.println("   5. Update Staff");
+        System.out.println("   6. Return to Main Menu");
         System.out.print("Enter your choice: ");
 
         int choice = in.nextInt();
@@ -104,7 +105,10 @@ public static void adminMenu()
             case 4:
               deleteStaff();
                 break;
-            case 5:
+			case 5:
+              updateStaff();
+                break;
+            case 6:
                 return;
             default:
                 System.out.println("Invalid choice. Try again.");
@@ -172,7 +176,8 @@ public static void adminMenu()
 			System.out.println("   7. Airline Menu");
 			System.out.println("   8. Search Passanger");
 			System.out.println("   9. Delete Passenger");
-			System.out.println("   10. Return to Main Menu");
+			System.out.println("   10. Update Passenger");
+			System.out.println("   11. Return to Main Menu");
             System.out.print("Enter your choice: ");
 
             int choice = in.nextInt();
@@ -207,7 +212,10 @@ public static void adminMenu()
 				case 9:
                     deletePassenger();
                     break;
-                case 10:
+				case 10:
+                    updatePassenger();
+                    break;
+                case 11:
                     return;
                 default:
                     System.out.println("Invalid choice. Try again.");
@@ -797,6 +805,80 @@ public static void adminMenu()
     else
     {
         System.out.println("Staff member not found.");
+    }
+}
+
+	public static void updatePassenger()
+{
+    System.out.print("Enter passenger ID to update: ");
+    int id = in.nextInt();
+    in.nextLine();
+
+    Passenger passenger = passengerManager.searchPassengerById(id);
+
+    if (passenger == null)
+    {
+        System.out.println("Passenger not found.");
+        return;
+    }
+
+    System.out.println("Current passenger information:");
+    System.out.println(passenger);
+
+    System.out.print("Enter new first name: ");
+    String firstName = in.nextLine();
+
+    System.out.print("Enter new last name: ");
+    String lastName = in.nextLine();
+
+    System.out.print("Enter new email: ");
+    String email = in.nextLine();
+
+    System.out.print("Enter new phone number: ");
+    String phoneNumber = in.nextLine();
+
+    boolean updated = passengerManager.updatePassenger(id, firstName, lastName, email, phoneNumber);
+
+    if (updated)
+    {
+        System.out.println("Passenger updated successfully.");
+    }
+}
+	public static void updateStaff()
+{
+    System.out.print("Enter staff ID to update: ");
+    int id = in.nextInt();
+    in.nextLine();
+
+    Staff staff = staffManager.searchStaffById(id);
+
+    if (staff == null)
+    {
+        System.out.println("Staff member not found.");
+        return;
+    }
+
+    System.out.println("Current staff information:");
+    System.out.println(staff);
+
+    System.out.print("Enter new first name: ");
+    String firstName = in.nextLine();
+
+    System.out.print("Enter new last name: ");
+    String lastName = in.nextLine();
+
+    System.out.print("Enter new role: ");
+    String role = in.nextLine();
+
+    System.out.print("Enter new salary: ");
+    double salary = in.nextDouble();
+    in.nextLine();
+
+    boolean updated = staffManager.updateStaff(id, firstName, lastName, role, salary);
+
+    if (updated)
+    {
+        System.out.println("Staff member updated successfully.");
     }
 }
 }
