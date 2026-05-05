@@ -102,17 +102,17 @@ public class MainMenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnPassengerMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPassengerMenuActionPerformed
-        //new PassengerMenu().setVisible(true);
+        new PassengerMenu().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnPassengerMenuActionPerformed
 
     private void btnStaffMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStaffMenuActionPerformed
-        //new StaffMenu().setVisible(true);
+        new StaffMenu().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnStaffMenuActionPerformed
 
     private void btnAdminMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminMenuActionPerformed
-        //new AdminMenu().setVisible(true);
+        new AdminMenu().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnAdminMenuActionPerformed
 
