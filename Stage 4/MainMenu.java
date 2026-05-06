@@ -106,15 +106,61 @@ public class MainMenu extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnPassengerMenuActionPerformed
 
-    private void btnStaffMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStaffMenuActionPerformed
-        new StaffMenu().setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_btnStaffMenuActionPerformed
+private void btnStaffMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStaffMenuActionPerformed
+    while (true) {
+        String password = javax.swing.JOptionPane.showInputDialog(
+                this,
+                "Enter password (or type 'back' to cancel):"
+        );
 
-    private void btnAdminMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminMenuActionPerformed
-        new AdminMenu().setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_btnAdminMenuActionPerformed
+        if (password == null) {
+            return;
+        }
+
+        password = password.trim();
+
+        if (password.equalsIgnoreCase("back")) {
+            return;
+        }
+
+        if (password.equalsIgnoreCase("eduardo")) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Access granted.");
+            new StaffMenu().setVisible(true);
+            this.dispose();
+            return;
+        }
+
+        javax.swing.JOptionPane.showMessageDialog(this, "Incorrect password. Try again.");
+    }
+}//GEN-LAST:event_btnStaffMenuActionPerformed
+
+private void btnAdminMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminMenuActionPerformed
+    while (true) {
+        String password = javax.swing.JOptionPane.showInputDialog(
+                this,
+                "Enter password (or type 'back' to cancel):"
+        );
+
+        if (password == null) {
+            return;
+        }
+
+        password = password.trim();
+
+        if (password.equalsIgnoreCase("back")) {
+            return;
+        }
+
+        if (password.equalsIgnoreCase("eduardo")) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Access granted.");
+            new AdminMenu().setVisible(true);
+            this.dispose();
+            return;
+        }
+
+        javax.swing.JOptionPane.showMessageDialog(this, "Incorrect password. Try again.");
+    }
+}//GEN-LAST:event_btnAdminMenuActionPerformed
 
     private void btnQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuitActionPerformed
         System.exit(0);
