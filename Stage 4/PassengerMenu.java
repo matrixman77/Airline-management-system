@@ -236,7 +236,8 @@ public class PassengerMenu extends javax.swing.JFrame {
     }
 
     private void btnBookingMenuActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(this, "Connect this button to your groupmate's BookingMenu GUI.");
+        new BookingMenu().setVisible(true);
+        this.dispose();
     }
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {
