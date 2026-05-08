@@ -1,0 +1,5 @@
+work done during stage 4: Designed and programmed the 
+Staff menu, 
+Passenger menu, 
+Admin menu.
+UML diagram
