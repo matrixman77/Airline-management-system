@@ -1,0 +1,16 @@
+README.txt
+
+All files contained in Stage 4 folder
+
+Description:
+Airline System that manages certain tasks such as passengers, booking, etc.
+Make sure you have all source files.
+
+Prerequisites.
+JVM (Java Virtual Machine)
+A java compiler
+A terminal, command prompt, or interface
+
+Running Instructions without IDE:
+1. Open the Command Prompt in the location that the .java files are stored or pathfind these files.
+2. Use this command in the promt, java -jar "AirlineManagementSystem.jar" 
