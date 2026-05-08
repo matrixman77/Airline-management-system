@@ -1,3 +1,8 @@
+import java.io.File;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 import java.util.ArrayList;
 
 /**
@@ -9,6 +14,7 @@ import java.util.ArrayList;
 public class StaffManagment
 {
     private ArrayList<Staff> staffList;
+    private String fileName = "staff.txt";
 
     /**
      * Default constructor
@@ -25,6 +31,7 @@ public class StaffManagment
     public void addStaff(Staff staff)
     {
         staffList.add(staff);
+        saveStaffToFile();
     }
 
     /**
@@ -83,6 +90,7 @@ public class StaffManagment
             staff.setLastName(lastName);
             staff.setRole(role);
             staff.setSalary(salary);
+            saveStaffToFile();
             return true;
         }
 
@@ -101,11 +109,95 @@ public class StaffManagment
         if (staff != null)
         {
             staffList.remove(staff);
+            saveStaffToFile();
             return true;
         }
 
         return false;
     }
+
+    public void loadStaffFromFile()
+{
+    staffList.clear();
+
+    try
+    {
+        File file = new File(fileName);
+        Scanner inputFile = new Scanner(file);
+
+        while (inputFile.hasNextLine())
+        {
+            String line = inputFile.nextLine();
+            String[] parts = line.split(",");
+
+            if (parts.length == 5)
+            {
+                int id = Integer.parseInt(parts[0].trim());
+                String firstName = parts[1].trim();
+                String lastName = parts[2].trim();
+                String role = parts[3].trim();
+                double salary = Double.parseDouble(parts[4].trim());
+
+                Staff staff = new Staff(id, firstName, lastName, role, salary);
+                staffList.add(staff);
+            }
+        }
+
+        inputFile.close();
+    }
+    catch (FileNotFoundException e)
+    {
+        System.out.println("Staff file not found.");
+    }
+}
+
+public void saveStaffToFile()
+{
+    try
+    {
+        PrintWriter outputFile = new PrintWriter(new FileWriter(fileName));
+
+        for (int i = 0; i < staffList.size(); i++)
+        {
+            Staff s = staffList.get(i);
+            outputFile.println(
+                s.getStaffId() + "," +
+                s.getFirstName() + "," +
+                s.getLastName() + "," +
+                s.getRole() + "," +
+                s.getSalary()
+            );
+        }
+
+        outputFile.close();
+    }
+    catch (Exception e)
+    {
+        System.out.println("Error saving staff.");
+    }
+}
+
+public String getAllStaffText()
+{
+    if (staffList.size() == 0)
+    {
+        return "No staff members found.";
+    }
+
+    String text = "";
+
+    for (int i = 0; i < staffList.size(); i++)
+    {
+        text += staffList.get(i).toString() + "\n-------------------------\n";
+    }
+
+    return text;
+}
+
+public int getStaffCount()
+{
+    return staffList.size();
+}
 
     /**
      * Creates dummy staff data
