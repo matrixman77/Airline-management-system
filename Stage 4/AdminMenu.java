@@ -1,10 +1,5 @@
 import javax.swing.JOptionPane;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
-
 /**
  *
  * @author Caleb
@@ -22,7 +17,9 @@ public class AdminMenu extends javax.swing.JFrame {
     public AdminMenu() {
         initComponents();
         setLocationRelativeTo(null);
-        loadDummyData();
+
+        passengerManager.loadPassengersFromFile();
+        staffManager.loadStaffFromFile();
     }
 
     @SuppressWarnings("unchecked")
@@ -145,43 +142,21 @@ public class AdminMenu extends javax.swing.JFrame {
     }// </editor-fold>
 
     private void btnPassengerReportActionPerformed(java.awt.event.ActionEvent evt) {
-        txtOutput.setText("");
-        txtOutput.append("PASSENGER REPORT\n");
-        txtOutput.append("Total Passengers: 3\n\n");
-
-        Passenger p1 = passengerManager.searchPassengerById(101);
-        Passenger p2 = passengerManager.searchPassengerById(102);
-        Passenger p3 = passengerManager.searchPassengerById(103);
-
-        if (p1 != null) {
-            txtOutput.append(p1.toString() + "\n-------------------------\n");
-        }
-        if (p2 != null) {
-            txtOutput.append(p2.toString() + "\n-------------------------\n");
-        }
-        if (p3 != null) {
-            txtOutput.append(p3.toString() + "\n-------------------------\n");
-        }
+        passengerManager.loadPassengersFromFile();
+        txtOutput.setText(
+            "PASSENGER REPORT\n" +
+            "Total Passengers: " + passengerManager.getPassengerCount() + "\n\n" +
+            passengerManager.getAllPassengersText()
+        );
     }
 
     private void btnStaffReportActionPerformed(java.awt.event.ActionEvent evt) {
-        txtOutput.setText("");
-        txtOutput.append("STAFF REPORT\n");
-        txtOutput.append("Total Staff Members: 3\n\n");
-
-        Staff s1 = staffManager.searchStaffById(201);
-        Staff s2 = staffManager.searchStaffById(202);
-        Staff s3 = staffManager.searchStaffById(203);
-
-        if (s1 != null) {
-            txtOutput.append(s1.toString() + "\n-------------------------\n");
-        }
-        if (s2 != null) {
-            txtOutput.append(s2.toString() + "\n-------------------------\n");
-        }
-        if (s3 != null) {
-            txtOutput.append(s3.toString() + "\n-------------------------\n");
-        }
+        staffManager.loadStaffFromFile();
+        txtOutput.setText(
+            "STAFF REPORT\n" +
+            "Total Staff Members: " + staffManager.getStaffCount() + "\n\n" +
+            staffManager.getAllStaffText()
+        );
     }
 
     private void btnSearchStaffActionPerformed(java.awt.event.ActionEvent evt) {
@@ -190,7 +165,8 @@ public class AdminMenu extends javax.swing.JFrame {
             return;
         }
 
-        int id = Integer.parseInt(input);
+        int id = Integer.parseInt(input.trim());
+        staffManager.loadStaffFromFile();
         Staff staff = staffManager.searchStaffById(id);
 
         if (staff != null) {
@@ -206,10 +182,11 @@ public class AdminMenu extends javax.swing.JFrame {
             return;
         }
 
-        int id = Integer.parseInt(input);
+        int id = Integer.parseInt(input.trim());
         boolean deleted = staffManager.deleteStaff(id);
 
         if (deleted) {
+            staffManager.loadStaffFromFile();
             txtOutput.setText("Staff member deleted successfully.");
         } else {
             txtOutput.setText("Staff member not found.");
@@ -222,7 +199,8 @@ public class AdminMenu extends javax.swing.JFrame {
             return;
         }
 
-        int id = Integer.parseInt(idText);
+        int id = Integer.parseInt(idText.trim());
+        staffManager.loadStaffFromFile();
         Staff staff = staffManager.searchStaffById(id);
 
         if (staff == null) {
@@ -239,11 +217,12 @@ public class AdminMenu extends javax.swing.JFrame {
             return;
         }
 
-        double salary = Double.parseDouble(salaryText);
+        double salary = Double.parseDouble(salaryText.trim());
 
-        boolean updated = staffManager.updateStaff(id, firstName, lastName, role, salary);
+        boolean updated = staffManager.updateStaff(id, firstName.trim(), lastName.trim(), role.trim(), salary);
 
         if (updated) {
+            staffManager.loadStaffFromFile();
             txtOutput.setText("Staff member updated successfully.\n\n" + staffManager.searchStaffById(id));
         }
     }
@@ -251,11 +230,6 @@ public class AdminMenu extends javax.swing.JFrame {
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {
         new MainMenu().setVisible(true);
         this.dispose();
-    }
-
-    private void loadDummyData() {
-        passengerManager.loadDummyPassengers();
-        staffManager.loadDummyStaff();
     }
 
     public static void main(String args[]) {
