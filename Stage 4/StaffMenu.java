@@ -20,6 +20,9 @@ public class StaffMenu extends javax.swing.JFrame {
     public StaffMenu() {
         initComponents();
         setLocationRelativeTo(null);
+
+        passengerManager.loadPassengersFromFile();
+        staffManager.loadStaffFromFile();
         loadDummyData();
     }
 
@@ -233,33 +236,14 @@ public class StaffMenu extends javax.swing.JFrame {
 
         Staff staff = new Staff(id, firstName.trim(), lastName.trim(), role.trim(), salary);
         staffManager.addStaff(staff);
+        staffManager.loadStaffFromFile();
 
         txtOutput.setText("Staff member added successfully.\n\n" + staff.toString());
     }
 
     private void btnViewStaffActionPerformed(java.awt.event.ActionEvent evt) {
-        txtOutput.setText("");
-
-        Staff s1 = staffManager.searchStaffById(201);
-        Staff s2 = staffManager.searchStaffById(202);
-        Staff s3 = staffManager.searchStaffById(203);
-
-        if (s1 == null && s2 == null && s3 == null) {
-            txtOutput.setText("No staff members found.");
-            return;
-        }
-
-        txtOutput.append("STAFF LIST\n\n");
-
-        if (s1 != null) {
-            txtOutput.append(s1.toString() + "\n-------------------------\n");
-        }
-        if (s2 != null) {
-            txtOutput.append(s2.toString() + "\n-------------------------\n");
-        }
-        if (s3 != null) {
-            txtOutput.append(s3.toString() + "\n-------------------------\n");
-        }
+        staffManager.loadStaffFromFile();
+        txtOutput.setText("STAFF LIST\n\n" + staffManager.getAllStaffText());
     }
 
     private void btnViewTicketsActionPerformed(java.awt.event.ActionEvent evt) {
@@ -331,6 +315,7 @@ public class StaffMenu extends javax.swing.JFrame {
         }
 
         int id = Integer.parseInt(input.trim());
+        passengerManager.loadPassengersFromFile();
         Passenger passenger = passengerManager.searchPassengerById(id);
 
         if (passenger != null) {
@@ -350,6 +335,7 @@ public class StaffMenu extends javax.swing.JFrame {
         boolean deleted = passengerManager.deletePassenger(id);
 
         if (deleted) {
+            passengerManager.loadPassengersFromFile();
             txtOutput.setText("Passenger deleted successfully.");
         } else {
             txtOutput.setText("Passenger not found.");
@@ -363,6 +349,7 @@ public class StaffMenu extends javax.swing.JFrame {
         }
 
         int id = Integer.parseInt(idText.trim());
+        passengerManager.loadPassengersFromFile();
         Passenger passenger = passengerManager.searchPassengerById(id);
 
         if (passenger == null) {
@@ -388,6 +375,7 @@ public class StaffMenu extends javax.swing.JFrame {
         );
 
         if (updated) {
+            passengerManager.loadPassengersFromFile();
             txtOutput.setText("Passenger updated successfully.\n\n" + passengerManager.searchPassengerById(id));
         }
     }
@@ -398,9 +386,6 @@ public class StaffMenu extends javax.swing.JFrame {
     }
 
     private void loadDummyData() {
-        passengerManager.loadDummyPassengers();
-        staffManager.loadDummyStaff();
-
         airlineMgmt.addAirlineName("Eduardo Airlines");
         airlineMgmt.addTerminalNumber("T1");
         airlineMgmt.addTerminalNumber("T2");
