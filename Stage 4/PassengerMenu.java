@@ -27,6 +27,8 @@ public class PassengerMenu extends javax.swing.JFrame {
     
         initComponents();
         setLocationRelativeTo(null);
+
+        this.passengerManager.loadPassengersFromFile();
     }
 
     @SuppressWarnings("unchecked")
@@ -185,33 +187,14 @@ public class PassengerMenu extends javax.swing.JFrame {
         );
 
         passengerManager.addPassenger(passenger);
+        passengerManager.loadPassengersFromFile();
 
         txtOutput.setText("Passenger added successfully.\n\n" + passenger.toString());
     }
 
     private void btnViewPassengersActionPerformed(java.awt.event.ActionEvent evt) {
-        txtOutput.setText("");
-
-        Passenger p1 = passengerManager.searchPassengerById(101);
-        Passenger p2 = passengerManager.searchPassengerById(102);
-        Passenger p3 = passengerManager.searchPassengerById(103);
-
-        if (p1 == null && p2 == null && p3 == null) {
-            txtOutput.setText("No passengers found.");
-            return;
-        }
-
-        txtOutput.append("PASSENGER LIST\n\n");
-
-        if (p1 != null) {
-            txtOutput.append(p1.toString() + "\n-------------------------\n");
-        }
-        if (p2 != null) {
-            txtOutput.append(p2.toString() + "\n-------------------------\n");
-        }
-        if (p3 != null) {
-            txtOutput.append(p3.toString() + "\n-------------------------\n");
-        }
+        passengerManager.loadPassengersFromFile();
+        txtOutput.setText("PASSENGER LIST\n\n" + passengerManager.getAllPassengersText());
     }
 
     private void btnAirlineInfoActionPerformed(java.awt.event.ActionEvent evt) {
@@ -248,7 +231,7 @@ public class PassengerMenu extends javax.swing.JFrame {
     }
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {
-        new  MainMenu(ticketMgmt, passengerManager, scheduleMgmt, airlineMgmt, staffManager).setVisible(true);
+        new MainMenu(ticketMgmt, passengerManager, scheduleMgmt, airlineMgmt, staffManager).setVisible(true);
         this.dispose();
     }
 
