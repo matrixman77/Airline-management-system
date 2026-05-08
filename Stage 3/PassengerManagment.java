@@ -1,3 +1,8 @@
+import java.io.File;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 import java.util.ArrayList;
 
 /**
@@ -9,6 +14,7 @@ import java.util.ArrayList;
 public class PassengerManagment
 {
     private ArrayList<Passenger> passengerList;
+    private String fileName = "passengers.txt";
 
     /**
      * Default constructor
@@ -25,8 +31,94 @@ public class PassengerManagment
     public void addPassenger(Passenger passenger)
     {
         passengerList.add(passenger);
+        savePassengersToFile();
     }
 
+public void loadPassengersFromFile()
+{
+    passengerList.clear();
+
+    try
+    {
+        File file = new File(fileName);
+        Scanner inputFile = new Scanner(file);
+
+        while (inputFile.hasNextLine())
+        {
+            String line = inputFile.nextLine();
+            String[] parts = line.split(",");
+
+            if (parts.length == 5)
+            {
+                int id = Integer.parseInt(parts[0].trim());
+                String firstName = parts[1].trim();
+                String lastName = parts[2].trim();
+                String email = parts[3].trim();
+                String phoneNumber = parts[4].trim();
+
+                Passenger passenger = new Passenger(id, firstName, lastName, email, phoneNumber);
+                passengerList.add(passenger);
+            }
+        }
+
+        inputFile.close();
+    }
+    catch (FileNotFoundException e)
+    {
+        System.out.println("Passenger file not found.");
+    }
+}
+
+public void savePassengersToFile()
+{
+    try
+    {
+        PrintWriter outputFile = new PrintWriter(new FileWriter(fileName));
+
+        for (int i = 0; i < passengerList.size(); i++)
+        {
+            Passenger p = passengerList.get(i);
+            outputFile.println(
+                p.getPassengerId() + "," +
+                p.getFirstName() + "," +
+                p.getLastName() + "," +
+                p.getEmail() + "," +
+                p.getPhoneNumber()
+            );
+        }
+
+        outputFile.close();
+    }
+    catch (Exception e)
+    {
+        System.out.println("Error saving passengers.");
+    }
+}
+
+public String getAllPassengersText()
+{
+    if (passengerList.size() == 0)
+    {
+        return "No passengers found.";
+    }
+
+    String text = "";
+
+    for (int i = 0; i < passengerList.size(); i++)
+    {
+        text += passengerList.get(i).toString() + "\n-------------------------\n";
+    }
+
+    return text;
+}
+
+public int getPassengerCount()
+{
+    return passengerList.size();
+}
+
+
+    
     /**
      * Displays all passengers
      */
@@ -83,6 +175,7 @@ public class PassengerManagment
             passenger.setLastName(lastName);
             passenger.setEmail(email);
             passenger.setPhoneNumber(phoneNumber);
+            savePassengersToFile();
             return true;
         }
 
@@ -101,6 +194,7 @@ public class PassengerManagment
         if (passenger != null)
         {
             passengerList.remove(passenger);
+            savePassengersToFile();
             return true;
         }
 
